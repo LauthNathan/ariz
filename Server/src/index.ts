@@ -1,7 +1,7 @@
-import * as dotenv from 'dotenv';
+import './lib/env';
 import express from 'express';
 
-dotenv.config();
+const PORT = parseInt(process.env.port||'4000');
 
 const app = express();
 app.use((req, res, next) => {
@@ -15,4 +15,4 @@ app.get('/', (req, res) => {
   });
 })
 
-app.listen(process.env.port, () => console.log(`Server started : http://localhost:${process.env.port}`));
+app.listen(PORT, () => console.log(`🚀 Server started : http://localhost:${PORT}`));
