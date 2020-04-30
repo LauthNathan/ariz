@@ -18,5 +18,16 @@
     </mat-error>
   </mat-form-field>
 
+  <mat-form-field class="w-100">
+    <mat-label>Password confirmation</mat-label>
+    <input matInput type="password" formControlName="passwordConfirmation">
+    <mat-error *ngIf="passwordConfirmation.hasError('notSame') && !username.hasError('required')">
+      The password are not the same
+    </mat-error>
+    <mat-error *ngIf="passwordConfirmation.hasError('required')">
+      Password confirmation is required
+    </mat-error>
+  </mat-form-field>
+
   <button mat-raised-button color="primary">Submit</button>
 </form>
