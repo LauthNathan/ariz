@@ -1,33 +1,42 @@
 <form class="login-form" [formGroup]="form">
   <mat-form-field class="w-100">
-    <mat-label>Email</mat-label>
+    <mat-label>{{signinText.email}}</mat-label>
     <input matInput placeholder="john@gmail.com" formControlName="username">
     <mat-error *ngIf="username.hasError('email') && !username.hasError('required')">
-      Please enter a valid email address
+      {{signinText.emailErrorPattern}}
     </mat-error>
     <mat-error *ngIf="username.hasError('required')">
-      Email is required
+      {{signinText.emailErrorRequired}}
     </mat-error>
   </mat-form-field>
 
   <mat-form-field class="w-100">
-    <mat-label>Password</mat-label>
+    <mat-label>{{signinText.password}}</mat-label>
     <input matInput type="password" formControlName="password">
     <mat-error *ngIf="password.hasError('required')">
-      Password is required
+      {{signinText.passwordRequired}}
+    </mat-error>
+    <mat-error *ngIf="password.hasError('toShort') && !password.hasError('required')">
+      {{signinText.passwordToShort}}
+    </mat-error>
+    <mat-error *ngIf="password.hasError('noNumber') && !password.hasError('required')">
+      {{signinText.passwordNoNumber}}
+    </mat-error>
+    <mat-error *ngIf="password.hasError('noNormalCase') && !password.hasError('required')">
+      {{signinText.passwordNoNormalCase}}
+    </mat-error>
+    <mat-error *ngIf="password.hasError('noUpperCase') && !password.hasError('required')">
+      {{signinText.passwordNoUpperCase}}
     </mat-error>
   </mat-form-field>
 
   <mat-form-field class="w-100">
-    <mat-label>Password confirmation</mat-label>
+    <mat-label>{{signinText.passwordConfirmation}}</mat-label>
     <input matInput type="password" formControlName="passwordConfirmation">
-    <mat-error *ngIf="passwordConfirmation.hasError('notSame') && !username.hasError('required')">
-      The password are not the same
-    </mat-error>
     <mat-error *ngIf="passwordConfirmation.hasError('required')">
-      Password confirmation is required
+      {{signinText.passwordConfirmationErrorRequired}}
     </mat-error>
   </mat-form-field>
 
-  <button mat-raised-button color="primary">Submit</button>
+  <button mat-raised-button color="primary" [disabled]="form.invalid">{{signinText.submit}}</button>
 </form>

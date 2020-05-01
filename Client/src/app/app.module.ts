@@ -15,7 +15,11 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
 import { SigninComponent } from './gui/signin/signin.component';
-import {ReactiveFormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {AppLanguage} from './app.language';
+import {LoginLanguage} from './gui/login/login.language';
+import {SigninLanguage} from './gui/signin/signin.language';
+import {PresentationLanguage} from './gui/presentation/presentation.language';
 
 @NgModule({
   declarations: [
@@ -35,14 +39,19 @@ import {ReactiveFormsModule} from '@angular/forms';
     MatFormFieldModule,
     MatInputModule,
     ReactiveFormsModule,
-    MatButtonModule
+    MatButtonModule,
+    FormsModule
   ],
   providers: [
     {
       provide: HTTP_INTERCEPTORS,
       useClass: TokenInterceptor,
       multi: true
-    }
+    },
+    AppLanguage,
+    PresentationLanguage,
+    LoginLanguage,
+    SigninLanguage
   ],
   bootstrap: [AppComponent]
 })

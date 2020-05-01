@@ -1,5 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
+import {StringUtils} from '../../utils/string.utils';
+import {ISigninLanguage, SigninLanguage} from './signin.language';
 
 @Component({
   selector: 'app-signin',
@@ -7,6 +9,8 @@ import {FormControl, FormGroup, Validators} from '@angular/forms';
   styleUrls: ['./signin.component.scss']
 })
 export class SigninComponent implements OnInit {
+
+  signinText: ISigninLanguage;
 
   form = new FormGroup({
     'username': new FormControl('', [
@@ -33,10 +37,33 @@ export class SigninComponent implements OnInit {
     return this.form.get('passwordConfirmation')
   }
 
-  constructor() {
+  constructor(private readonly signinLanguage: SigninLanguage) {
   }
 
   ngOnInit() {
+    this.signinText = this.signinLanguage[localStorage.getItem('arizToolLanguageCode')];
+    this.password.valueChanges.subscribe(() => {
+      this.checkPassword(this.password.value);
+    });
   }
 
+  /**
+   * Check the given password and set the corresponding error to the formControl.
+   *
+   * @param password - The password to check.
+   */
+  checkPassword(password: string): void {
+    if (!StringUtils.containSixChars(password)) {
+      this.password.setErrors({toShort: true});
+    }
+    if (!StringUtils.containNumber(password)) {
+      this.password.setErrors({noNumber: true});
+    }
+    if (!StringUtils.containNormalCase(password)) {
+      this.password.setErrors({noNormalCase: true});
+    }
+    if (!StringUtils.containUppercase(password)) {
+      this.password.setErrors({noUpperCase: true});
+    }
+  }
 }

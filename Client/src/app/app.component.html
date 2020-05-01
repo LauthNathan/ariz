@@ -2,8 +2,11 @@
   <mat-toolbar-row>
     <span class="material-icons mr-1">menu</span>
     <span>Ariz tool</span>
-    <span class="ml-auto">Login</span>
-    <span class="ml-2">Sign in</span>
+    <span class="ml-auto">{{appText.login}}</span>
+    <span class="ml-2">{{appText.signin}}</span>
+    <select class="ml-2" [(ngModel)]="selectedLanguage" (ngModelChange)="loadNewLanguage(selectedLanguage)">
+      <option *ngFor="let language of languages" value="{{language}}">{{language}}</option>
+    </select>
   </mat-toolbar-row>
 </mat-toolbar>
 

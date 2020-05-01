@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
+import {ILoginLanguage, LoginLanguage} from './login.language';
 
 @Component({
   selector: 'app-login',
@@ -7,6 +8,8 @@ import {FormControl, FormGroup, Validators} from '@angular/forms';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
+
+  loginText: ILoginLanguage;
 
   form = new FormGroup({
     'username': new FormControl('', [
@@ -26,10 +29,11 @@ export class LoginComponent implements OnInit {
     return this.form.get('password');
   }
 
-  constructor() {
+  constructor(private readonly loginLanguage: LoginLanguage) {
   }
 
   ngOnInit() {
+    this.loginText = this.loginLanguage[localStorage.getItem('arizToolLanguageCode')];
   }
 
 }
