@@ -1,18 +1,28 @@
 import './lib/env';
+import { PrismaClient } from '@prisma/client';
 import express from 'express';
+import authRoute from './routes/auth';
+import testRoute from './routes/test';
 
-const PORT = parseInt(process.env.port||'4000');
+// Constants
+const PORT = parseInt(process.env.port||'3000');
 
+// Prisma
+export const prisma = new PrismaClient();
+
+// App
 const app = express();
+
+// Middlewares
+app.use(express.json());
 app.use((req, res, next) => {
   res.header('Access-Control-Allow-Origin', '*');
   next();
 });
 
-app.get('/', (req, res) => {
-  res.json({
-    message: 'ok'
-  });
-})
+// Routes
+app.use('/api', authRoute);
+app.use('/test', testRoute);
 
+// Start
 app.listen(PORT, () => console.log(`🚀 Server started : http://localhost:${PORT}`));
