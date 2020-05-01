@@ -2,6 +2,12 @@ import '../lib/env';
 import jwt from 'jsonwebtoken';
 import { Request, Response, NextFunction } from 'express';
 
+/**
+ * Middleware for user auth
+ * @param req express Request
+ * @param res express Response
+ * @param next express Next
+ */
 export function auth(req: Request, res: Response, next: NextFunction) {
   const token = req.header('auth-token');
   if (!token) return res.status(401).json({error: 'Access denied'});

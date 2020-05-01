@@ -1,5 +1,10 @@
 import { IOne, One, Two, Three } from './steps/part-one';
 
+
+/**
+ * Test Step 1
+ * @param data Project data
+ */
 function step1(data: One): One {
   return {
     help: 'Help',
@@ -11,6 +16,10 @@ function step1(data: One): One {
   };
 }
 
+/**
+ * Test Step 2
+ * @param data Project data
+ */
 function step2(data: Two): Two {
   return {
     help: 'Help',
@@ -20,6 +29,10 @@ function step2(data: Two): Two {
   };
 }
 
+/**
+ * Test Step 3
+ * @param data Project data
+ */
 function step3(data: Three): Three {
   return {
     help: 'Help',
@@ -28,6 +41,6 @@ function step3(data: Three): Three {
   }
 }
 
-function project() {
+// function project() {
 
-}
+// }
