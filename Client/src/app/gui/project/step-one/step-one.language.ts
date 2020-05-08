@@ -7,8 +7,13 @@ export class StepOneLanguage {
   eng: IStepOneLanguage = {
     chooseStep: 'Please choose one of the following steps :',
     steps: [
-      'one',
-      'two'
+      {step: '1. Put in other words the problem and its caracteristics', number: 'one'},
+      {step: '2. Define the object and the tool', number: 'two'},
+      {step: '3. Represent graphically TC1 and TC2', number: 'three'},
+      {step: '4. Select, between the conflict\'s diagram A and B, the one who perform the best the basic function', number: 'four'},
+      {step: '5. Intensify the conflict', number: 'five'},
+      {step: '6. Find the problem\'s template', number: 'six'},
+      {step: '7. Check if the problem can be solved through the standards', number: 'seven'}
     ]
   };
 

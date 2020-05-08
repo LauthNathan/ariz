@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {EIntensifyLanguage, IEIntensifyLanguage} from './e-intensify.language';
 
 @Component({
   selector: 'app-e-intensify',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EIntensifyComponent implements OnInit {
 
-  constructor() { }
+  eIntensifyText: IEIntensifyLanguage;
+
+  constructor(private readonly eIntensifyLanguage: EIntensifyLanguage) { }
 
   ngOnInit() {
+    this.eIntensifyText = this.eIntensifyLanguage[localStorage.getItem('arizToolLanguageCode')];
   }
 
 }

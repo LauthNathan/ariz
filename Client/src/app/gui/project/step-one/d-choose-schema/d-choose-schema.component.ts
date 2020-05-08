@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {DChooseSchemaLanguage, IDChooseSchemaLanguage} from './d-choose-schema.language';
 
 @Component({
   selector: 'app-d-choose-schema',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DChooseSchemaComponent implements OnInit {
 
-  constructor() { }
+  dChooseSchemaText: IDChooseSchemaLanguage;
+
+  constructor(private readonly dChooseSchemaLanguage: DChooseSchemaLanguage) { }
 
   ngOnInit() {
+    this.dChooseSchemaText = this.dChooseSchemaLanguage[localStorage.getItem('arizToolLanguageCode')];
   }
 
 }

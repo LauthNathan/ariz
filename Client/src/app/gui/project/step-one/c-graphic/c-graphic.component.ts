@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {CGraphicLanguage, ICGraphicLanguage} from './c-graphic.language';
 
 @Component({
   selector: 'app-c-graphic',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CGraphicComponent implements OnInit {
 
-  constructor() { }
+  cGraphicText: ICGraphicLanguage;
+
+  constructor(private readonly cGraphicLanguage: CGraphicLanguage) { }
 
   ngOnInit() {
+    this.cGraphicText = this.cGraphicLanguage[localStorage.getItem('arizToolLanguageCode')];
   }
 
 }

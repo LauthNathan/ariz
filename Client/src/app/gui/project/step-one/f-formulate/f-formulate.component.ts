@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {FFormulateLanguage, IFFormulateLanguage} from './f-formulate.language';
 
 @Component({
   selector: 'app-f-formulate',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FFormulateComponent implements OnInit {
 
-  constructor() { }
+  fFormulateText: IFFormulateLanguage;
+
+  constructor(private readonly fFormulateLanguage: FFormulateLanguage) { }
 
   ngOnInit() {
+    this.fFormulateText = this.fFormulateLanguage[localStorage.getItem('arizToolLanguageCode')];
   }
 
 }

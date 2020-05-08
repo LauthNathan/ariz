@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {AReformulationLanguage, IAReformulationLanguage} from './a-reformulation.language';
 
 @Component({
   selector: 'app-a-reformulation',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AReformulationComponent implements OnInit {
 
-  constructor() { }
+  aReformationText: IAReformulationLanguage;
+
+  constructor(private readonly aReformulationLanguage: AReformulationLanguage) { }
 
   ngOnInit() {
+    this.aReformationText = this.aReformulationLanguage[localStorage.getItem('arizToolLanguageCode')];
   }
 
 }

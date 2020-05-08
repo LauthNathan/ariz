@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {BDefinitionLanguage, IBDefinitionLanguage} from './b-definition.language';
 
 @Component({
   selector: 'app-b-definition',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BDefinitionComponent implements OnInit {
 
-  constructor() { }
+  bDefinitionText: IBDefinitionLanguage;
+
+  constructor(private readonly bDefinitionLanguage: BDefinitionLanguage) { }
 
   ngOnInit() {
+    this.bDefinitionText= this.bDefinitionLanguage[localStorage.getItem('arizToolLanguageCode')];
   }
 
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {GVerifyLanguage, IGVerifyLanguage} from './g-verify.language';
 
 @Component({
   selector: 'app-g-verify',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GVerifyComponent implements OnInit {
 
-  constructor() { }
+  gVerifyText: IGVerifyLanguage;
+
+  constructor(private readonly gVerifyLanguage: GVerifyLanguage) { }
 
   ngOnInit() {
+    this.gVerifyText = this.gVerifyLanguage[localStorage.getItem('arizToolLanguageCode')];
   }
 
 }

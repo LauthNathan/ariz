@@ -36,6 +36,13 @@ import {ProjectLanguage} from './gui/project/project.language';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatTreeModule} from '@angular/material/tree';
 import {MatIconModule} from '@angular/material/icon';
+import {AReformulationLanguage} from './gui/project/step-one/a-reformulation/a-reformulation.language';
+import {BDefinitionLanguage} from './gui/project/step-one/b-definition/b-definition.language';
+import {CGraphicLanguage} from './gui/project/step-one/c-graphic/c-graphic.language';
+import {DChooseSchemaLanguage} from './gui/project/step-one/d-choose-schema/d-choose-schema.language';
+import {EIntensifyLanguage} from './gui/project/step-one/e-intensify/e-intensify.language';
+import {FFormulateLanguage} from './gui/project/step-one/f-formulate/f-formulate.language';
+import {GVerifyLanguage} from './gui/project/step-one/g-verify/g-verify.language';
 
 @NgModule({
   declarations: [
@@ -83,7 +90,14 @@ import {MatIconModule} from '@angular/material/icon';
     SigninLanguage,
     StepOneLanguage,
     DashboardLanguage,
-    ProjectLanguage
+    ProjectLanguage,
+    AReformulationLanguage,
+    BDefinitionLanguage,
+    CGraphicLanguage,
+    DChooseSchemaLanguage,
+    EIntensifyLanguage,
+    FFormulateLanguage,
+    GVerifyLanguage
   ],
   bootstrap: [AppComponent]
 })
