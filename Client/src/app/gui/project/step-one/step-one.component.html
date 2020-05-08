@@ -1,0 +1,6 @@
+<h1>{{stepOneText.chooseStep}}</h1>
+<ul>
+  <li *ngFor="let step of stepOneText.steps">
+    <a routerLink="{{step.number}}">{{step.step}}</a>
+  </li>
+</ul>

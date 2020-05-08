@@ -20,6 +20,22 @@ import {AppLanguage} from './app.language';
 import {LoginLanguage} from './gui/login/login.language';
 import {SigninLanguage} from './gui/signin/signin.language';
 import {PresentationLanguage} from './gui/presentation/presentation.language';
+import { StepOneComponent } from './gui/project/step-one/step-one.component';
+import { AReformulationComponent } from './gui/project/step-one/a-reformulation/a-reformulation.component';
+import { BDefinitionComponent } from './gui/project/step-one/b-definition/b-definition.component';
+import { CGraphicComponent } from './gui/project/step-one/c-graphic/c-graphic.component';
+import { DChooseSchemaComponent } from './gui/project/step-one/d-choose-schema/d-choose-schema.component';
+import { EIntensifyComponent } from './gui/project/step-one/e-intensify/e-intensify.component';
+import { FFormulateComponent } from './gui/project/step-one/f-formulate/f-formulate.component';
+import { GVerifyComponent } from './gui/project/step-one/g-verify/g-verify.component';
+import {StepOneLanguage} from './gui/project/step-one/step-one.language';
+import { DashboardComponent } from './gui/dashboard/dashboard.component';
+import {DashboardLanguage} from './gui/dashboard/dashboard.language';
+import { ProjectComponent } from './gui/project/project.component';
+import {ProjectLanguage} from './gui/project/project.language';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatTreeModule} from '@angular/material/tree';
+import {MatIconModule} from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -27,7 +43,17 @@ import {PresentationLanguage} from './gui/presentation/presentation.language';
     AccentFoldPipe,
     PresentationComponent,
     LoginComponent,
-    SigninComponent
+    SigninComponent,
+    StepOneComponent,
+    AReformulationComponent,
+    BDefinitionComponent,
+    CGraphicComponent,
+    DChooseSchemaComponent,
+    EIntensifyComponent,
+    FFormulateComponent,
+    GVerifyComponent,
+    DashboardComponent,
+    ProjectComponent
   ],
   imports: [
     BrowserModule,
@@ -40,7 +66,10 @@ import {PresentationLanguage} from './gui/presentation/presentation.language';
     MatInputModule,
     ReactiveFormsModule,
     MatButtonModule,
-    FormsModule
+    FormsModule,
+    MatSidenavModule,
+    MatTreeModule,
+    MatIconModule
   ],
   providers: [
     {
@@ -51,7 +80,10 @@ import {PresentationLanguage} from './gui/presentation/presentation.language';
     AppLanguage,
     PresentationLanguage,
     LoginLanguage,
-    SigninLanguage
+    SigninLanguage,
+    StepOneLanguage,
+    DashboardLanguage,
+    ProjectLanguage
   ],
   bootstrap: [AppComponent]
 })

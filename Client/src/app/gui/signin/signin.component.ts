@@ -34,7 +34,7 @@ export class SigninComponent implements OnInit {
   }
 
   get passwordConfirmation() {
-    return this.form.get('passwordConfirmation')
+    return this.form.get('passwordConfirmation');
   }
 
   constructor(private readonly signinLanguage: SigninLanguage) {
