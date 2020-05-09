@@ -2,6 +2,7 @@ import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 import {PresentationComponent} from './gui/presentation/presentation.component';
 import {LoginComponent} from './gui/login/login.component';
+import {SigninComponent} from './gui/signin/signin.component';
 
 
 const routes: Routes = [
@@ -17,6 +18,10 @@ const routes: Routes = [
   {
     path: 'login',
     component: LoginComponent
+  },
+  {
+    path: 'signin',
+    component: SigninComponent
   }
 ];
 

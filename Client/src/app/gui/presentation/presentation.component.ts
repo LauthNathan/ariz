@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {IPresentationLanguage, PresentationLanguage} from './presentation.language';
 
 @Component({
   selector: 'app-presentation',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PresentationComponent implements OnInit {
 
-  constructor() { }
+  presentationText: IPresentationLanguage;
+
+  constructor(private readonly presentationLanguage: PresentationLanguage) { }
 
   ngOnInit() {
+    this.presentationText = this.presentationLanguage[localStorage.getItem('arizToolLanguageCode')];
   }
 
 }
