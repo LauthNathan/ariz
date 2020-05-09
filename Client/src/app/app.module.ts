@@ -29,6 +29,7 @@ import {MatTreeModule} from '@angular/material/tree';
 import {MatIconModule} from '@angular/material/icon';
 import { BasicInputComponent } from './gui/project/steps-type/basic-input/basic-input.component';
 import {BasicInputLanguage} from './gui/project/steps-type/basic-input/basic-input.language';
+import {MatCardModule} from '@angular/material/card';
 
 @NgModule({
   declarations: [
@@ -55,6 +56,7 @@ import {BasicInputLanguage} from './gui/project/steps-type/basic-input/basic-inp
     FormsModule,
     MatSidenavModule,
     MatTreeModule,
+    MatCardModule,
     MatIconModule
   ],
   providers: [

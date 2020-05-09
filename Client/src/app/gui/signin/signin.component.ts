@@ -9,13 +9,18 @@ import {ISigninLanguage, SigninLanguage} from './signin.language';
   styleUrls: ['./signin.component.scss']
 })
 export class SigninComponent implements OnInit {
-
+  hide1 = true;
+  hide2 = true;
   signinText: ISigninLanguage;
 
   form = new FormGroup({
     'username': new FormControl('', [
       Validators.required,
       Validators.email
+    ]),
+    'name': new FormControl('', [
+      Validators.required,
+      Validators.minLength(6)
     ]),
     'password': new FormControl('', [
       Validators.required
@@ -24,6 +29,10 @@ export class SigninComponent implements OnInit {
       Validators.required
     ])
   });
+
+  get name() {
+    return this.form.get('name');
+  }
 
   get username() {
     return this.form.get('username');
@@ -34,7 +43,7 @@ export class SigninComponent implements OnInit {
   }
 
   get passwordConfirmation() {
-    return this.form.get('passwordConfirmation');
+    return this.form.get('passwordConfirmation')
   }
 
   constructor(private readonly signinLanguage: SigninLanguage) {
