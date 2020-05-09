@@ -5,14 +5,7 @@ import {LoginComponent} from './gui/login/login.component';
 import {SigninComponent} from './gui/signin/signin.component';
 import {DashboardComponent} from './gui/dashboard/dashboard.component';
 import {ProjectComponent} from './gui/project/project.component';
-import {AReformulationComponent} from './gui/project/step-one/a-reformulation/a-reformulation.component';
-import {BDefinitionComponent} from './gui/project/step-one/b-definition/b-definition.component';
-import {CGraphicComponent} from './gui/project/step-one/c-graphic/c-graphic.component';
-import {DChooseSchemaComponent} from './gui/project/step-one/d-choose-schema/d-choose-schema.component';
-import {EIntensifyComponent} from './gui/project/step-one/e-intensify/e-intensify.component';
-import {FFormulateComponent} from './gui/project/step-one/f-formulate/f-formulate.component';
-import {GVerifyComponent} from './gui/project/step-one/g-verify/g-verify.component';
-import {StepOneComponent} from './gui/project/step-one/step-one.component';
+import {BasicInputComponent} from './gui/project/steps-type/basic-input/basic-input.component';
 
 
 const routes: Routes = [
@@ -52,36 +45,32 @@ const routes: Routes = [
         pathMatch: 'full'
       },
       {
-        path: 'one',
-        component: StepOneComponent
-      },
-      {
         path: 'one/one',
-        component: AReformulationComponent
+        component: BasicInputComponent
       },
       {
         path: 'one/two',
-        component: BDefinitionComponent
+        component: BasicInputComponent
       },
       {
         path: 'one/three',
-        component: CGraphicComponent
+        component: BasicInputComponent
       },
       {
         path: 'one/four',
-        component: DChooseSchemaComponent
+        component: BasicInputComponent
       },
       {
         path: 'one/five',
-        component: EIntensifyComponent
+        component: BasicInputComponent
       },
       {
         path: 'one/six',
-        component: FFormulateComponent
+        component: BasicInputComponent
       },
       {
         path: 'one/seven',
-        component: GVerifyComponent
+        component: BasicInputComponent
       }
     ]
   }

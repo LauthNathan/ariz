@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CGraphicComponent } from './c-graphic.component';
+import { BasicInputComponent } from './basic-input.component';
 
-describe('CGraphicComponent', () => {
-  let component: CGraphicComponent;
-  let fixture: ComponentFixture<CGraphicComponent>;
+describe('BasicInputComponent', () => {
+  let component: BasicInputComponent;
+  let fixture: ComponentFixture<BasicInputComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CGraphicComponent ]
+      declarations: [ BasicInputComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(CGraphicComponent);
+    fixture = TestBed.createComponent(BasicInputComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

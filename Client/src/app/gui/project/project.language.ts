@@ -44,7 +44,7 @@ export class ProjectLanguage {
             link: 'one/seven'
           }
         ],
-        link: 'one'
+        link: 'one/one'
       },
       {
         name: 'Step 2 : Analyse the problem\'s type',
@@ -62,7 +62,7 @@ export class ProjectLanguage {
             link: 'two/three'
           },
         ],
-        link: 'two'
+        link: 'two/one'
       },
       {
         name: 'Etape 3 : Define the ideal final result and the physical contradiction',
@@ -92,7 +92,7 @@ export class ProjectLanguage {
             link: 'three/six'
           }
         ],
-        link: 'three'
+        link: 'three/one'
       },
       {
         name: 'Step 4 : Apply the Su-Field ressources',
@@ -126,7 +126,7 @@ export class ProjectLanguage {
             link: 'four/seven'
           }
         ],
-        link: 'four'
+        link: 'four/one'
       },
       {
         name: 'Step 5 : Apply the databases',
@@ -148,7 +148,7 @@ export class ProjectLanguage {
             link: 'five/four'
           }
         ],
-        link: 'five'
+        link: 'five/one'
       },
       {
         name: 'Step 6 : Modify the problem',
@@ -170,7 +170,7 @@ export class ProjectLanguage {
             link: 'six/four'
           }
         ],
-        link: 'six'
+        link: 'six/one'
       },
       {
         name: 'Step 7 : Analyse the answer',
@@ -192,7 +192,7 @@ export class ProjectLanguage {
             link: 'seven/four'
           }
         ],
-        link: 'seven'
+        link: 'seven/one'
       },
       {
         name: 'Step 8 : Go further away than the problem',
@@ -210,7 +210,7 @@ export class ProjectLanguage {
             link: 'height/three'
           }
         ],
-        link: 'height'
+        link: 'height/one'
       },
       {
         name: 'Step 9 : Conclude, capitalize',
@@ -224,7 +224,7 @@ export class ProjectLanguage {
             link: 'nine/two'
           }
         ],
-        link: 'nine'
+        link: 'nine/one'
       }
     ]
   };
@@ -263,7 +263,7 @@ export class ProjectLanguage {
             link: 'one/seven'
           }
         ],
-        link: 'one'
+        link: 'one/one'
       },
       {
         name: 'Etape 2 : Analyser le modèle de problème',
@@ -281,7 +281,7 @@ export class ProjectLanguage {
             link: 'two/three'
           },
         ],
-        link: 'two'
+        link: 'two/one'
       },
       {
         name: 'Etape 3 : Définir le RIF & la contradiction physique',
@@ -311,7 +311,7 @@ export class ProjectLanguage {
             link: 'three/six'
           }
         ],
-        link: 'three'
+        link: 'three/one'
       },
       {
         name: 'Etape 4 : Appliquer les ressources substances/champs',
@@ -345,7 +345,7 @@ export class ProjectLanguage {
             link: 'four/seven'
           }
         ],
-        link: 'four'
+        link: 'four/one'
       },
       {
         name: 'Etape 5 : Appliquer les bases de données',
@@ -367,7 +367,7 @@ export class ProjectLanguage {
             link: 'five/four'
           }
         ],
-        link: 'five'
+        link: 'five/one'
       },
       {
         name: 'Etape 6 : Modifier le problème',
@@ -389,7 +389,7 @@ export class ProjectLanguage {
             link: 'six/four'
           }
         ],
-        link: 'six'
+        link: 'six/one'
       },
       {
         name: 'Etape 7 : Analyser la réponse',
@@ -411,7 +411,7 @@ export class ProjectLanguage {
             link: 'seven/four'
           }
         ],
-        link: 'seven'
+        link: 'seven/one'
       },
       {
         name: 'Etape 8 : Mettre en œuvre au-delà du problème',
@@ -429,7 +429,7 @@ export class ProjectLanguage {
             link: 'height/three'
           }
         ],
-        link: 'height'
+        link: 'height/one'
       },
       {
         name: 'Etape 9 : Faire le bilan, capitaliser',
@@ -443,7 +443,7 @@ export class ProjectLanguage {
             link: 'nine/two'
           }
         ],
-        link: 'nine'
+        link: 'nine/one'
       }
     ]
   };
