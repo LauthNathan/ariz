@@ -1,4 +1,4 @@
-import '../lib/env';
+import '../../lib/env';
 import jwt from 'jsonwebtoken';
 import { Request, Response, NextFunction } from 'express';
 
@@ -17,6 +17,6 @@ export function auth(req: Request, res: Response, next: NextFunction) {
     (req as any).user = verfied;
     next();
   } catch (e) {
-    res.status(400).json({error: 'Invalid Token'});
+    res.status(400).json({error: e});
   }
 }

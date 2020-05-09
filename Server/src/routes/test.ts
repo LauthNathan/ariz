@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { auth } from './jwt';
+import { auth } from './authentication/jwt';
 
 const router = Router();
 

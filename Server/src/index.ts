@@ -1,7 +1,9 @@
 import './lib/env';
 import { PrismaClient } from '@prisma/client';
 import express from 'express';
-import authRoute from './routes/auth';
+import authRoute from './routes/authentication/auth';
+import projectRoute from './routes/project/project';
+import stepOneRoute from './routes/project/steps/stepOne';
 import testRoute from './routes/test';
 
 // Constants
@@ -21,7 +23,7 @@ app.use((req, res, next) => {
 });
 
 // Routes
-app.use('/api', authRoute);
+app.use('/api', [authRoute, projectRoute, stepOneRoute]);
 app.use('/test', testRoute);
 
 // Start
