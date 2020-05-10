@@ -27,9 +27,7 @@
                 {{treeControl.isExpanded(node) ? 'expand_more' : 'chevron_right'}}
               </mat-icon>
             </button>
-            <a routerLink="{{node.link}}">
-              {{node.name}}
-            </a>
+            {{node.name}}
           </div>
           <ul [class.step-tree-invisible]="!treeControl.isExpanded(node)">
             <ng-container matTreeNodeOutlet></ng-container>

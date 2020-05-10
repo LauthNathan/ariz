@@ -11,48 +11,69 @@ import {ISigninLanguage, SigninLanguage} from './signin.language';
 export class SigninComponent implements OnInit {
   hide1 = true;
   hide2 = true;
+  signIn = true;
+  signUp = false;
   signinText: ISigninLanguage;
 
-  form = new FormGroup({
-    'username': new FormControl('', [
+  signUpForm = new FormGroup({
+    username: new FormControl('', [
       Validators.required,
       Validators.email
     ]),
-    'name': new FormControl('', [
+    name: new FormControl('', [
       Validators.required,
       Validators.minLength(6)
     ]),
-    'password': new FormControl('', [
+    password: new FormControl('', [
       Validators.required
     ]),
-    'passwordConfirmation': new FormControl('', [
+    passwordConfirmation: new FormControl('', [
       Validators.required
     ])
   });
 
-  get name() {
-    return this.form.get('name');
+  formSignIn = new FormGroup({
+    username: new FormControl('', [
+      Validators.required,
+      Validators.email
+    ]),
+    password: new FormControl('', [
+      Validators.required
+    ])
+  });
+
+  get nameSignUp() {
+    return this.signUpForm.get('name');
   }
 
-  get username() {
-    return this.form.get('username');
+  get usernameSignUp() {
+    return this.signUpForm.get('username');
   }
 
-  get password() {
-    return this.form.get('password');
+  get passwordSignUp() {
+    return this.signUpForm.get('password');
   }
 
-  get passwordConfirmation() {
-    return this.form.get('passwordConfirmation')
+  get passwordConfirmationSignUp() {
+    return this.signUpForm.get('passwordConfirmation');
   }
+
+  get usernameSignIn() {
+    return this.formSignIn.get('username');
+  }
+
+  get passwordSignIn() {
+    return this.formSignIn.get('password');
+  }
+
 
   constructor(private readonly signinLanguage: SigninLanguage) {
   }
 
   ngOnInit() {
     this.signinText = this.signinLanguage[localStorage.getItem('arizToolLanguageCode')];
-    this.password.valueChanges.subscribe(() => {
-      this.checkPassword(this.password.value);
+    this.passwordSignUp.valueChanges.subscribe(() => {
+      this.checkPassword(this.passwordSignUp.value);
     });
   }
 
@@ -63,16 +84,32 @@ export class SigninComponent implements OnInit {
    */
   checkPassword(password: string): void {
     if (!StringUtils.containSixChars(password)) {
-      this.password.setErrors({toShort: true});
+      this.passwordSignUp.setErrors({toShort: true});
     }
     if (!StringUtils.containNumber(password)) {
-      this.password.setErrors({noNumber: true});
+      this.passwordSignUp.setErrors({noNumber: true});
     }
     if (!StringUtils.containNormalCase(password)) {
-      this.password.setErrors({noNormalCase: true});
+      this.passwordSignUp.setErrors({noNormalCase: true});
     }
     if (!StringUtils.containUppercase(password)) {
-      this.password.setErrors({noUpperCase: true});
+      this.passwordSignUp.setErrors({noUpperCase: true});
     }
+  }
+
+  /**
+   * Set sign in active and sign up inactive.
+   */
+  setSignInActive(): void {
+    this.signIn = true;
+    this.signUp = false;
+  }
+
+  /**
+   * Set sign up active and sign in inactive.
+   */
+  setSignUpActive(): void {
+    this.signIn = false;
+    this.signUp = true;
   }
 }

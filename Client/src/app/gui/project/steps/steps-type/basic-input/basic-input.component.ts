@@ -18,8 +18,8 @@ export class BasicInputComponent implements OnInit {
   }
 
   ngOnInit() {
-    let majorStep = NumberUtils.stringToNumbers(this.router.url.split('/')[3]);
-    let minorStep = NumberUtils.stringToNumbers(this.router.url.split('/')[4]);
+    const majorStep = NumberUtils.stringToNumbers(this.router.url.split('/')[3]);
+    const minorStep = NumberUtils.stringToNumbers(this.router.url.split('/')[4]);
     this.basicInputText = this.stepsLanguage[localStorage.getItem('arizToolLanguageCode')][majorStep - 1][minorStep - 1];
   }
 

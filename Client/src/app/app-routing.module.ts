@@ -1,7 +1,6 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 import {PresentationComponent} from './gui/presentation/presentation.component';
-import {LoginComponent} from './gui/login/login.component';
 import {SigninComponent} from './gui/signin/signin.component';
 import {DashboardComponent} from './gui/dashboard/dashboard.component';
 import {ProjectComponent} from './gui/project/project.component';
@@ -17,10 +16,6 @@ const routes: Routes = [
   {
     path: 'presentation',
     component: PresentationComponent
-  },
-  {
-    path: 'login',
-    component: LoginComponent
   },
   {
     path: 'signin',
