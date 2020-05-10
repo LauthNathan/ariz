@@ -1,0 +1,23 @@
+.project-sidebar-container {
+  height: 100%;
+}
+
+.project-sidenav {
+  width: 20rem;
+}
+
+.menu-sidenav {
+  font-size: 2rem;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.step-tree-invisible {
+  display: none;
+}
+
+.step-tree ul,
+.step-tree li {
+  margin-top: 0;
+  margin-bottom: 0;
+  list-style-type: none;
+}

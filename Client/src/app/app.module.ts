@@ -10,26 +10,42 @@ import {TokenInterceptor} from './interceptor/token.interceptor';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import { PresentationComponent } from './gui/presentation/presentation.component';
-import { LoginComponent } from './gui/login/login.component';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
-import {MatCardModule} from '@angular/material/card';
 import { SigninComponent } from './gui/signin/signin.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {AppLanguage} from './app.language';
-import {LoginLanguage} from './gui/login/login.language';
 import {SigninLanguage} from './gui/signin/signin.language';
 import {PresentationLanguage} from './gui/presentation/presentation.language';
-import {MatIconModule} from '@angular/material/icon'
+import { DashboardComponent } from './gui/dashboard/dashboard.component';
+import {DashboardLanguage} from './gui/dashboard/dashboard.language';
+import { ProjectComponent } from './gui/project/project.component';
+import {ProjectLanguage} from './gui/project/project.language';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatTreeModule} from '@angular/material/tree';
+import {MatIconModule} from '@angular/material/icon';
+import { BasicInputComponent } from './gui/project/steps/steps-type/basic-input/basic-input.component';
+import {BasicInputLanguage} from './gui/project/steps/steps-type/basic-input/basic-input.language';
+import {MatCardModule} from '@angular/material/card';
+import { CommentComponent } from './gui/project/steps/comment/comment.component';
+import { MoreInformationComponent } from './gui/project/steps/more-information/more-information.component';
+import {MatExpansionModule} from '@angular/material/expansion';
+import {CommentLanguage} from './gui/project/steps/comment/comment.language';
+import {MoreInformationLanguage} from './gui/project/steps/more-information/more-information.language';
+import {StepsLanguage} from './gui/project/steps/steps.language';
 
 @NgModule({
   declarations: [
     AppComponent,
     AccentFoldPipe,
     PresentationComponent,
-    LoginComponent,
-    SigninComponent
+    SigninComponent,
+    DashboardComponent,
+    ProjectComponent,
+    BasicInputComponent,
+    CommentComponent,
+    MoreInformationComponent
   ],
   imports: [
     BrowserModule,
@@ -42,9 +58,12 @@ import {MatIconModule} from '@angular/material/icon'
     MatInputModule,
     ReactiveFormsModule,
     MatButtonModule,
-    MatCardModule,
     FormsModule,
-    MatIconModule
+    MatSidenavModule,
+    MatTreeModule,
+    MatCardModule,
+    MatIconModule,
+    MatExpansionModule
   ],
   providers: [
     {
@@ -54,8 +73,13 @@ import {MatIconModule} from '@angular/material/icon'
     },
     AppLanguage,
     PresentationLanguage,
-    LoginLanguage,
-    SigninLanguage
+    SigninLanguage,
+    DashboardLanguage,
+    ProjectLanguage,
+    BasicInputLanguage,
+    CommentLanguage,
+    MoreInformationLanguage,
+    StepsLanguage
   ],
   bootstrap: [AppComponent]
 })

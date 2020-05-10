@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {AppLanguage, IAppLanguage} from './app.language';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -17,7 +18,7 @@ export class AppComponent implements OnInit {
 
   appText: IAppLanguage;
 
-  constructor(private readonly appLanguage: AppLanguage) {
+  constructor(private readonly appLanguage: AppLanguage, private router: Router) {
   }
 
   ngOnInit(): void {
