@@ -27,9 +27,15 @@ import {ProjectLanguage} from './gui/project/project.language';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatTreeModule} from '@angular/material/tree';
 import {MatIconModule} from '@angular/material/icon';
-import { BasicInputComponent } from './gui/project/steps-type/basic-input/basic-input.component';
-import {BasicInputLanguage} from './gui/project/steps-type/basic-input/basic-input.language';
+import { BasicInputComponent } from './gui/project/steps/steps-type/basic-input/basic-input.component';
+import {BasicInputLanguage} from './gui/project/steps/steps-type/basic-input/basic-input.language';
 import {MatCardModule} from '@angular/material/card';
+import { CommentComponent } from './gui/project/steps/comment/comment.component';
+import { MoreInformationComponent } from './gui/project/steps/more-information/more-information.component';
+import {MatExpansionModule} from '@angular/material/expansion';
+import {CommentLanguage} from './gui/project/steps/comment/comment.language';
+import {MoreInformationLanguage} from './gui/project/steps/more-information/more-information.language';
+import {StepsLanguage} from './gui/project/steps/steps.language';
 
 @NgModule({
   declarations: [
@@ -40,7 +46,9 @@ import {MatCardModule} from '@angular/material/card';
     SigninComponent,
     DashboardComponent,
     ProjectComponent,
-    BasicInputComponent
+    BasicInputComponent,
+    CommentComponent,
+    MoreInformationComponent
   ],
   imports: [
     BrowserModule,
@@ -57,7 +65,8 @@ import {MatCardModule} from '@angular/material/card';
     MatSidenavModule,
     MatTreeModule,
     MatCardModule,
-    MatIconModule
+    MatIconModule,
+    MatExpansionModule
   ],
   providers: [
     {
@@ -71,7 +80,10 @@ import {MatCardModule} from '@angular/material/card';
     SigninLanguage,
     DashboardLanguage,
     ProjectLanguage,
-    BasicInputLanguage
+    BasicInputLanguage,
+    CommentLanguage,
+    MoreInformationLanguage,
+    StepsLanguage
   ],
   bootstrap: [AppComponent]
 })

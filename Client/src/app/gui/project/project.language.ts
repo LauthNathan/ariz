@@ -144,7 +144,7 @@ export class ProjectLanguage {
             link: 'five/three'
           },
           {
-            name: '4. Use the pointers the the physical effects and phenomenons ',
+            name: '4. Use the pointers the the physical effects and phenomenons',
             link: 'five/four'
           }
         ],
@@ -154,7 +154,7 @@ export class ProjectLanguage {
         name: 'Step 6 : Modify the problem',
         children: [
           {
-            name: '1. Move from a physical answer to a technical one ',
+            name: '1. Move from a physical answer to a technical one',
             link: 'six/one'
           },
           {
@@ -216,7 +216,7 @@ export class ProjectLanguage {
         name: 'Step 9 : Conclude, capitalize',
         children: [
           {
-            name: '1. Compare the real progress to the ARIZ\'s theorical progress ',
+            name: '1. Compare the real progress to the ARIZ\'s theorical progress',
             link: 'nine/one'
           },
           {
@@ -435,7 +435,7 @@ export class ProjectLanguage {
         name: 'Etape 9 : Faire le bilan, capitaliser',
         children: [
           {
-            name: '1. Comparer le déroulement réel et le déroulement théorique d\'ARIZ ',
+            name: '1. Comparer le déroulement réel et le déroulement théorique d\'ARIZ',
             link: 'nine/one'
           },
           {

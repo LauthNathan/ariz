@@ -1,0 +1,10 @@
+<h1>{{basicInputText.title}}</h1>
+
+<app-more-information [showMoreText]="basicInputText.showMore"></app-more-information>
+
+<p>{{basicInputText.question}}</p>
+<div>
+  <input>
+</div>
+
+<app-comment [commentValue]="comment" (comment)="setComment($event)"></app-comment>

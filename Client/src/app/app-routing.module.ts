@@ -5,7 +5,7 @@ import {LoginComponent} from './gui/login/login.component';
 import {SigninComponent} from './gui/signin/signin.component';
 import {DashboardComponent} from './gui/dashboard/dashboard.component';
 import {ProjectComponent} from './gui/project/project.component';
-import {BasicInputComponent} from './gui/project/steps-type/basic-input/basic-input.component';
+import {BasicInputComponent} from './gui/project/steps/steps-type/basic-input/basic-input.component';
 
 
 const routes: Routes = [
@@ -46,6 +46,7 @@ const routes: Routes = [
       },
       {
         path: 'one/one',
+        data: {step: 1, subStep: 1},
         component: BasicInputComponent
       },
       {
