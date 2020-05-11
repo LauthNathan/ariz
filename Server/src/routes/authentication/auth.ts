@@ -1,7 +1,7 @@
-import '../lib/env';
+import '../../lib/env';
 import { Router } from 'express';
-import { prisma } from '../index';
-import { userValidation, userLoginValidation } from '../validation';
+import { prisma } from '../../index';
+import { userValidation, userLoginValidation } from '../../validation';
 import jwt from 'jsonwebtoken';
 import bcrypt from 'bcryptjs';
 
