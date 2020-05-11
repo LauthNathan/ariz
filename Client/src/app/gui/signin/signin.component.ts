@@ -9,8 +9,9 @@ import {ISigninLanguage, SigninLanguage} from './signin.language';
   styleUrls: ['./signin.component.scss']
 })
 export class SigninComponent implements OnInit {
-  hide1 = true;
-  hide2 = true;
+  hideSignUp = true;
+  hideSignUpConfirmation = true;
+  hideLogin = true;
   signIn = true;
   signUp = false;
   signinText: ISigninLanguage;

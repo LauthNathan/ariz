@@ -5,6 +5,7 @@ import authRoute from './routes/authentication/auth';
 import projectRoute from './routes/project/project';
 import stepOneRoute from './routes/project/steps/stepOne';
 import testRoute from './routes/test';
+import cors from 'cors'
 
 // Constants
 const PORT = parseInt(process.env.port||'3000');
@@ -16,11 +17,8 @@ export const prisma = new PrismaClient();
 const app = express();
 
 // Middlewares
+app.use(cors());
 app.use(express.json());
-app.use((req, res, next) => {
-  res.header('Access-Control-Allow-Origin', '*');
-  next();
-});
 
 // Routes
 app.use('/api', [authRoute, projectRoute, stepOneRoute]);

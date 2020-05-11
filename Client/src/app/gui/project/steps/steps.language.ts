@@ -5,7 +5,7 @@ export interface IStepsLanguage {
 }
 
 export class StepsLanguage {
-  eng: IStepsLanguage[][] = [
+  gb: IStepsLanguage[][] = [
     [
       {
         title: '1. Put in other words the problem and its caracteristics',

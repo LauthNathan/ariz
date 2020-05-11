@@ -3,7 +3,7 @@ export interface IMoreInformationLanguage {
 }
 
 export class MoreInformationLanguage {
-  eng: IMoreInformationLanguage = {
+  gb: IMoreInformationLanguage = {
     showMore: 'Show more'
   };
 

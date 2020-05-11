@@ -3,7 +3,7 @@ export interface ICommentLanguage {
 }
 
 export class CommentLanguage {
-  eng: ICommentLanguage = {
+  gb: ICommentLanguage = {
     comment: 'Comment'
   };
 

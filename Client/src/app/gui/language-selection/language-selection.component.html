@@ -1,0 +1,14 @@
+<!-- <mat-select id="select" [(ngModel)]="selectedLanguage" (ngModelChange)="loadNewLanguage(selectedLanguage)" [(value)]="selected">
+  <mat-option *ngFor="let language of languages" value="{{language}}">
+
+  </mat-option>
+</mat-select> -->
+
+<div class="selection">
+  <img id="selected" src="{{'https://www.countryflags.io/'+selected+'/flat/64.png'}}" />
+  <mat-select id="select" [(value)]="selected" (selectionChange)="loadNewLanguage(selected)">
+    <mat-option *ngFor="let language of languages" [value]="language">
+      <img src="{{'https://www.countryflags.io/'+language+'/flat/64.png'}}" />
+    </mat-option>
+  </mat-select>
+</div>

@@ -1,5 +1,7 @@
+@import '../../../styles/general.scss';
+
 .project-sidebar-container {
-  height: 100%;
+  height: calc(100% - #{$HEADER_HEIGHT});
 }
 
 .project-sidenav {
