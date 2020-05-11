@@ -6,7 +6,7 @@ const router = Router();
 
 
 /**
- * Get all projects of authenticated user
+ * Get all projects of authenticated user.
  */
 router.get('/projects', auth, async (req, res) => {
   const user = (req as any).user
@@ -26,7 +26,7 @@ router.get('/projects', auth, async (req, res) => {
 
 
 /**
- * Get one project of authenticated user
+ * Get one project of authenticated user.
  */
 router.get('/projects/:id', auth, async (req, res) => {
   const user = (req as any).user;

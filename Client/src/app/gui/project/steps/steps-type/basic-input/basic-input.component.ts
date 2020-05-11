@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {IStepsLanguage, StepsLanguage} from '../../steps.language';
-import {Router} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import {NumberUtils} from '../../../../../utils/number.utils';
 
 @Component({
@@ -13,13 +13,27 @@ export class BasicInputComponent implements OnInit {
   basicInputText: IStepsLanguage;
   comment = '';
   showMoreText = '';
+  projectData;
+  inputValue;
 
-  constructor(private readonly stepsLanguage: StepsLanguage, private router: Router) {
+  constructor(private readonly stepsLanguage: StepsLanguage,
+              private router: Router,
+              private route: ActivatedRoute) {
   }
 
   ngOnInit() {
-    const majorStep = NumberUtils.stringToNumbers(this.router.url.split('/')[3]);
-    const minorStep = NumberUtils.stringToNumbers(this.router.url.split('/')[4]);
+    this.projectData = this.route.parent.snapshot.data.projectData;
+    const majorStepLetter = this.router.url.split('/')[3];
+    const minorStepLetter = this.router.url.split('/')[4];
+    const majorStep = NumberUtils.stringToNumbers(majorStepLetter);
+    const minorStep = NumberUtils.stringToNumbers(minorStepLetter);
+    const majorStepUppercase = 'step' + majorStepLetter[0].toUpperCase() + majorStepLetter.slice(1);
+    const minorStepUppercase = 'step' + minorStepLetter[0].toUpperCase() + minorStepLetter.slice(1);
+    if (this.projectData.projectData.project[majorStepUppercase]) {
+      this.inputValue = this.projectData.projectData.project[majorStepUppercase][minorStepUppercase];
+    } else {
+      this.inputValue = '';
+    }
     this.basicInputText = this.stepsLanguage[localStorage.getItem('arizToolLanguageCode')][majorStep - 1][minorStep - 1];
   }
 

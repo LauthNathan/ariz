@@ -5,6 +5,7 @@ import authRoute from './routes/authentication/auth';
 import projectRoute from './routes/project/project';
 import stepOneRoute from './routes/project/steps/stepOne';
 import testRoute from './routes/test';
+import cors from 'cors';
 
 // Constants
 const PORT = parseInt(process.env.port||'3000');
@@ -14,6 +15,7 @@ export const prisma = new PrismaClient();
 
 // App
 const app = express();
+app.use(cors());
 
 // Middlewares
 app.use(express.json());

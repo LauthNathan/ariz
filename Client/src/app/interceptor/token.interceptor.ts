@@ -22,7 +22,7 @@ export class TokenInterceptor implements HttpInterceptor {
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     req = req.clone({
       setHeaders: {
-        Authorization: `Bearer ${localStorage.getItem('arizToolToken')}`
+      'auth-token': localStorage.getItem('arizToolToken')
       }
     });
 

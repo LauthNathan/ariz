@@ -37,7 +37,9 @@
         <a href="#">Mot de passe oublié ?</a>
       </div>
 
-      <button mat-raised-button color="primary" [disabled]="formSignIn.invalid">{{signinText.submit}}</button>
+      <button mat-raised-button color="primary" [disabled]="formSignIn.invalid" (click)="login()">
+        {{signinText.submit}}
+      </button>
     </form>
     <form *ngIf="signUp" class="login-form" [formGroup]="signUpForm">
       <mat-form-field class="w-100" appearance="fill">
@@ -94,7 +96,9 @@
           {{signinText.passwordConfirmationErrorRequired}}
         </mat-error>
       </mat-form-field>
-      <button mat-raised-button color="primary" [disabled]="signUpForm.invalid">{{signinText.submit}}</button>
+      <button mat-raised-button color="primary" [disabled]="signUpForm.invalid" (click)="createUser()">
+        {{signinText.submit}}
+      </button>
     </form>
   </div>
   <div class="illustration">

@@ -5,6 +5,7 @@ import {SigninComponent} from './gui/signin/signin.component';
 import {DashboardComponent} from './gui/dashboard/dashboard.component';
 import {ProjectComponent} from './gui/project/project.component';
 import {BasicInputComponent} from './gui/project/steps/steps-type/basic-input/basic-input.component';
+import {ProjectResolver} from './resolver/ProjectResolver';
 
 
 const routes: Routes = [
@@ -32,6 +33,7 @@ const routes: Routes = [
   },
   {
     path: 'project/:id',
+    resolve: {projectData: ProjectResolver},
     component: ProjectComponent,
     children: [
       {
@@ -74,7 +76,10 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
+  providers: [
+    ProjectResolver
+  ]
 })
 export class AppRoutingModule {
 }
