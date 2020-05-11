@@ -66,6 +66,7 @@ h1 {
   margin: 0 32px 0 0;
   font-weight: normal;
   color: rgb(80, 80, 80);
+  cursor: pointer;
 }
 h1.active {
   font-size: 2rem;
@@ -94,4 +95,12 @@ h1.active {
   left: 32px;
   width: 256px;
   margin-bottom: 64px;
+}
+
+.selection {
+  width: 64px;
+  position: absolute;
+  top: 32px;
+  right: 32px;
+  z-index: 999;
 }

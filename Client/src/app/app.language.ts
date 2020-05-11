@@ -1,16 +1,16 @@
 export interface IAppLanguage {
   login: string;
-  signin: string;
+  signUp: string;
 }
 
 export class AppLanguage {
-  eng: IAppLanguage = {
-    login: 'Login',
-    signin: 'Signin'
+  gb: IAppLanguage = {
+    login: 'Log In',
+    signUp: 'Sign Up'
   };
 
   fr: IAppLanguage = {
     login: 'Connexion',
-    signin: 'Inscription'
+    signUp: 'Inscription'
   };
 }

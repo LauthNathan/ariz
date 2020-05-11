@@ -1,0 +1,30 @@
+header {
+  background-color: #fafafa;
+  height: 64px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 200px 1fr 64px;
+  line-height: 64px;
+}
+
+.header-menu {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  a {
+    margin: 0 16px;
+  }
+}
+
+#logo {
+  margin-top: 16px;
+  margin-left: 16px;
+  height: 50%;
+}
+
+.selection {
+  position: relative;
+  width: 100%;
+  z-index: 999;
+}

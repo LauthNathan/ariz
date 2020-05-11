@@ -15,14 +15,10 @@ export const prisma = new PrismaClient();
 
 // App
 const app = express();
-app.use(cors());
 
 // Middlewares
+app.use(cors());
 app.use(express.json());
-app.use((req, res, next) => {
-  res.header('Access-Control-Allow-Origin', '*');
-  next();
-});
 
 // Routes
 app.use('/api', [authRoute, projectRoute, stepOneRoute]);

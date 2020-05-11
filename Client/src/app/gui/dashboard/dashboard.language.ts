@@ -4,7 +4,7 @@ export interface IDashboardLanguage {
 }
 
 export class DashboardLanguage {
-  eng: IDashboardLanguage = {
+  gb: IDashboardLanguage = {
     personalProject: 'Your projects',
     sharedProjects: 'Projects shared with you'
   };

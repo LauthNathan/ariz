@@ -17,10 +17,11 @@ export interface ISigninLanguage {
   login: string;
   register: string;
   loginError: string;
+  forgotPassword: string;
 }
 
 export class SigninLanguage {
-  eng: ISigninLanguage = {
+  gb: ISigninLanguage = {
     email: 'Email',
     name: 'Username',
     password: 'Password',
@@ -38,7 +39,8 @@ export class SigninLanguage {
     slogan: 'A POWERFULL TOOL ALLOWING YOU TO DEVELOP YOUR ARIZ PROJECTS',
     login: 'Log in',
     register: 'Sign up',
-    loginError: 'Wrong username or password'
+    loginError: 'Wrong username or password',
+    forgotPassword: 'Forgot password?'
   };
 
   fr: ISigninLanguage = {
@@ -59,6 +61,7 @@ export class SigninLanguage {
     slogan: 'UN OUTIL PUISSANT VOUS PERMETTANT DE DÉVELOPPER VOS PROJETS ARIZ',
     login: 'Se connecter',
     register: 'S\'inscrire',
-    loginError: 'Mauvais Email ou mot de passe'
+    loginError: 'Mauvais Email ou mot de passe',
+    forgotPassword: 'Mot de passe oublié ?'
   };
 }

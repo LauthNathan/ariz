@@ -10,7 +10,7 @@ export interface IProjectLanguage {
 
 export class ProjectLanguage {
 
-  eng: IProjectLanguage = {
+  gb: IProjectLanguage = {
     steps: [
       {
         name: 'Step 1 : Anaylyse the problem',
