@@ -11,11 +11,11 @@ export interface UserToCreateDto {
 }
 
 export interface ProjectStepOne {
-  stepOne: string,
-  stepTwo: string,
-  stepThree: string,
-  stepFour: string,
-  stepFive: string,
-  stepSix: string,
-  stepSeven: string
+  stepOne: string;
+  stepTwo: string;
+  stepThree: string;
+  stepFour: string;
+  stepFive: string;
+  stepSix: string;
+  stepSeven: string;
 }
