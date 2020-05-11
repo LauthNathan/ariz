@@ -38,10 +38,10 @@ router.post('/register', async (req, res) => {
 
 // ===== LOGIN =====
 router.post('/login', async (req, res) => {
+  console.log(req.body)
   // Validate Query
   const { error } = userLoginValidation.validate(req.body);
   if (error) return res.status(400).json(error);
-
   // Query
   const userQuery = prisma.user.findOne({
     where: {

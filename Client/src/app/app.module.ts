@@ -31,9 +31,11 @@ import {MatCardModule} from '@angular/material/card';
 import { CommentComponent } from './gui/project/steps/comment/comment.component';
 import { MoreInformationComponent } from './gui/project/steps/more-information/more-information.component';
 import {MatExpansionModule} from '@angular/material/expansion';
+import {MatSelectModule} from '@angular/material/select';
 import {CommentLanguage} from './gui/project/steps/comment/comment.language';
 import {MoreInformationLanguage} from './gui/project/steps/more-information/more-information.language';
 import {StepsLanguage} from './gui/project/steps/steps.language';
+import { LanguageSelectionComponent } from './gui/language-selection/language-selection.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +47,8 @@ import {StepsLanguage} from './gui/project/steps/steps.language';
     ProjectComponent,
     BasicInputComponent,
     CommentComponent,
-    MoreInformationComponent
+    MoreInformationComponent,
+    LanguageSelectionComponent
   ],
   imports: [
     BrowserModule,
@@ -63,7 +66,8 @@ import {StepsLanguage} from './gui/project/steps/steps.language';
     MatTreeModule,
     MatCardModule,
     MatIconModule,
-    MatExpansionModule
+    MatExpansionModule,
+    MatSelectModule
   ],
   providers: [
     {

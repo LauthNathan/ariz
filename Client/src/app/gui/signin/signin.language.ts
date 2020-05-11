@@ -16,10 +16,11 @@ export interface ISigninLanguage {
   slogan: string;
   login: string;
   register: string;
+  forgotPassword: string;
 }
 
 export class SigninLanguage {
-  eng: ISigninLanguage = {
+  gb: ISigninLanguage = {
     email: 'Email',
     name: 'Username',
     password: 'Password',
@@ -36,7 +37,8 @@ export class SigninLanguage {
     passwordConfirmationErrorRequired: 'Password confirmation is required',
     slogan: 'A POWERFULL TOOL ALLOWING YOU TO DEVELOP YOUR ARIZ PROJECTS',
     login: 'Log in',
-    register: 'Sign up'
+    register: 'Sign up',
+    forgotPassword: 'Forgot password?'
   };
 
   fr: ISigninLanguage = {
@@ -56,6 +58,7 @@ export class SigninLanguage {
     passwordConfirmationErrorRequired: 'Confirmation de mot de passe obligatoire',
     slogan: 'UN OUTIL PUISSANT VOUS PERMETTANT DE DÉVELOPPER VOS PROJETS ARIZ',
     login: 'Se connecter',
-    register: 'S\'inscrire'
+    register: 'S\'inscrire',
+    forgotPassword: 'Mot de passe oublié ?'
   };
 }

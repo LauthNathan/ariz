@@ -4,6 +4,7 @@
         transform="translate(-3.236 106.301)"/>
   <circle id="Ellipse_1" data-name="Ellipse 1" cx="12.5" cy="12.5" r="12.5" transform="translate(362.264 54.301)"/>
 </svg>
+<app-language-selection class="selection"></app-language-selection>
 <div class="page">
   <div class="form">
     <div class="form-top">
@@ -27,18 +28,24 @@
 
       <mat-form-field class="w-100" appearance="fill">
         <mat-label>{{signinText.password}}</mat-label>
-        <input matInput type="password" formControlName="password">
+        <input matInput [type]="hideLogin ? 'password' : 'text'" formControlName="password">
+        <button mat-icon-button matSuffix (click)="hideLogin = !hideLogin" [attr.aria-label]="'Hide password'"
+                [attr.aria-pressed]="hideLogin">
+          <mat-icon>{{hideLogin ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
         <mat-error *ngIf="passwordSignIn.hasError('required')">
           {{signinText.passwordRequired}}
         </mat-error>
       </mat-form-field>
 
       <div class="help">
-        <a href="#">Mot de passe oublié ?</a>
+        <a href="#">{{signinText.forgotPassword}}</a>
       </div>
 
       <button mat-raised-button color="primary" [disabled]="formSignIn.invalid">{{signinText.submit}}</button>
     </form>
+
+
     <form *ngIf="signUp" class="login-form" [formGroup]="signUpForm">
       <mat-form-field class="w-100" appearance="fill">
         <mat-label>{{signinText.email}}</mat-label>
@@ -61,10 +68,10 @@
 
       <mat-form-field class="w-100" appearance="fill">
         <mat-label>{{signinText.password}}</mat-label>
-        <input matInput [type]="hide1 ? 'password' : 'text'" formControlName="password">
-        <button mat-icon-button matSuffix (click)="hide1 = !hide1" [attr.aria-label]="'Hide password'"
-                [attr.aria-pressed]="hide1">
-          <mat-icon>{{hide1 ? 'visibility_off' : 'visibility'}}</mat-icon>
+        <input matInput [type]="hideSignUp ? 'password' : 'text'" formControlName="password">
+        <button mat-icon-button matSuffix (click)="hideSignUp = !hideSignUp" [attr.aria-label]="'Hide password'"
+                [attr.aria-pressed]="hideSignUp">
+          <mat-icon>{{hideSignUp ? 'visibility_off' : 'visibility'}}</mat-icon>
         </button>
         <mat-error *ngIf="passwordSignUp.hasError('required')">
           {{signinText.passwordRequired}}
@@ -85,10 +92,10 @@
 
       <mat-form-field class="w-100" appearance="fill">
         <mat-label>{{signinText.passwordConfirmation}}</mat-label>
-        <input matInput [type]="hide2 ? 'password' : 'text'" formControlName="passwordConfirmation">
-        <button mat-icon-button matSuffix (click)="hide2 = !hide2" [attr.aria-label]="'Hide password'"
-                [attr.aria-pressed]="hide2">
-          <mat-icon>{{hide2 ? 'visibility_off' : 'visibility'}}</mat-icon>
+        <input matInput [type]="hideSignUpConfirmation ? 'password' : 'text'" formControlName="passwordConfirmation">
+        <button mat-icon-button matSuffix (click)="hideSignUpConfirmation = !hideSignUpConfirmation" [attr.aria-label]="'Hide password'"
+                [attr.aria-pressed]="hideSignUpConfirmation">
+          <mat-icon>{{hideSignUpConfirmation ? 'visibility_off' : 'visibility'}}</mat-icon>
         </button>
         <mat-error *ngIf="passwordConfirmationSignUp.hasError('required')">
           {{signinText.passwordConfirmationErrorRequired}}

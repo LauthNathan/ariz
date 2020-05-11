@@ -5,7 +5,7 @@ export interface IPresentationLanguage {
 }
 
 export class PresentationLanguage {
-  eng: IPresentationLanguage = {
+  gb: IPresentationLanguage = {
     title: 'Some presentation here',
     p1: 'Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor\n' +
       '  quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean\n' +
