@@ -116,6 +116,13 @@
     {
       "tag": "CreateField",
       "model": "User",
+      "field": "image",
+      "type": "String",
+      "arity": "Required"
+    },
+    {
+      "tag": "CreateField",
+      "model": "User",
       "field": "role",
       "type": "Int",
       "arity": "Required"
@@ -267,6 +274,20 @@
         },
         "directive": "id"
       }
+    },
+    {
+      "tag": "CreateField",
+      "model": "Project",
+      "field": "name",
+      "type": "String",
+      "arity": "Required"
+    },
+    {
+      "tag": "CreateField",
+      "model": "Project",
+      "field": "image",
+      "type": "String",
+      "arity": "Required"
     },
     {
       "tag": "CreateField",
@@ -777,6 +798,230 @@
     {
       "tag": "CreateField",
       "model": "StepOne",
+      "field": "commentOne",
+      "type": "String",
+      "arity": "Optional"
+    },
+    {
+      "tag": "CreateDirective",
+      "location": {
+        "path": {
+          "tag": "Field",
+          "model": "StepOne",
+          "field": "commentOne"
+        },
+        "directive": "map"
+      }
+    },
+    {
+      "tag": "CreateArgument",
+      "location": {
+        "tag": "Directive",
+        "path": {
+          "tag": "Field",
+          "model": "StepOne",
+          "field": "commentOne"
+        },
+        "directive": "map"
+      },
+      "argument": "",
+      "value": "\"comment_one\""
+    },
+    {
+      "tag": "CreateField",
+      "model": "StepOne",
+      "field": "commentTwo",
+      "type": "String",
+      "arity": "Optional"
+    },
+    {
+      "tag": "CreateDirective",
+      "location": {
+        "path": {
+          "tag": "Field",
+          "model": "StepOne",
+          "field": "commentTwo"
+        },
+        "directive": "map"
+      }
+    },
+    {
+      "tag": "CreateArgument",
+      "location": {
+        "tag": "Directive",
+        "path": {
+          "tag": "Field",
+          "model": "StepOne",
+          "field": "commentTwo"
+        },
+        "directive": "map"
+      },
+      "argument": "",
+      "value": "\"comment_two\""
+    },
+    {
+      "tag": "CreateField",
+      "model": "StepOne",
+      "field": "commentThree",
+      "type": "String",
+      "arity": "Optional"
+    },
+    {
+      "tag": "CreateDirective",
+      "location": {
+        "path": {
+          "tag": "Field",
+          "model": "StepOne",
+          "field": "commentThree"
+        },
+        "directive": "map"
+      }
+    },
+    {
+      "tag": "CreateArgument",
+      "location": {
+        "tag": "Directive",
+        "path": {
+          "tag": "Field",
+          "model": "StepOne",
+          "field": "commentThree"
+        },
+        "directive": "map"
+      },
+      "argument": "",
+      "value": "\"comment_three\""
+    },
+    {
+      "tag": "CreateField",
+      "model": "StepOne",
+      "field": "commentFour",
+      "type": "String",
+      "arity": "Optional"
+    },
+    {
+      "tag": "CreateDirective",
+      "location": {
+        "path": {
+          "tag": "Field",
+          "model": "StepOne",
+          "field": "commentFour"
+        },
+        "directive": "map"
+      }
+    },
+    {
+      "tag": "CreateArgument",
+      "location": {
+        "tag": "Directive",
+        "path": {
+          "tag": "Field",
+          "model": "StepOne",
+          "field": "commentFour"
+        },
+        "directive": "map"
+      },
+      "argument": "",
+      "value": "\"comment_four\""
+    },
+    {
+      "tag": "CreateField",
+      "model": "StepOne",
+      "field": "commentFive",
+      "type": "String",
+      "arity": "Optional"
+    },
+    {
+      "tag": "CreateDirective",
+      "location": {
+        "path": {
+          "tag": "Field",
+          "model": "StepOne",
+          "field": "commentFive"
+        },
+        "directive": "map"
+      }
+    },
+    {
+      "tag": "CreateArgument",
+      "location": {
+        "tag": "Directive",
+        "path": {
+          "tag": "Field",
+          "model": "StepOne",
+          "field": "commentFive"
+        },
+        "directive": "map"
+      },
+      "argument": "",
+      "value": "\"comment_five\""
+    },
+    {
+      "tag": "CreateField",
+      "model": "StepOne",
+      "field": "commentSix",
+      "type": "String",
+      "arity": "Optional"
+    },
+    {
+      "tag": "CreateDirective",
+      "location": {
+        "path": {
+          "tag": "Field",
+          "model": "StepOne",
+          "field": "commentSix"
+        },
+        "directive": "map"
+      }
+    },
+    {
+      "tag": "CreateArgument",
+      "location": {
+        "tag": "Directive",
+        "path": {
+          "tag": "Field",
+          "model": "StepOne",
+          "field": "commentSix"
+        },
+        "directive": "map"
+      },
+      "argument": "",
+      "value": "\"comment_six\""
+    },
+    {
+      "tag": "CreateField",
+      "model": "StepOne",
+      "field": "commentSeven",
+      "type": "String",
+      "arity": "Optional"
+    },
+    {
+      "tag": "CreateDirective",
+      "location": {
+        "path": {
+          "tag": "Field",
+          "model": "StepOne",
+          "field": "commentSeven"
+        },
+        "directive": "map"
+      }
+    },
+    {
+      "tag": "CreateArgument",
+      "location": {
+        "tag": "Directive",
+        "path": {
+          "tag": "Field",
+          "model": "StepOne",
+          "field": "commentSeven"
+        },
+        "directive": "map"
+      },
+      "argument": "",
+      "value": "\"comment_seven\""
+    },
+    {
+      "tag": "CreateField",
+      "model": "StepOne",
       "field": "project",
       "type": "Project",
       "arity": "Required"
@@ -1028,6 +1273,102 @@
       },
       "argument": "",
       "value": "\"step_three\""
+    },
+    {
+      "tag": "CreateField",
+      "model": "StepTwo",
+      "field": "commentOne",
+      "type": "String",
+      "arity": "Optional"
+    },
+    {
+      "tag": "CreateDirective",
+      "location": {
+        "path": {
+          "tag": "Field",
+          "model": "StepTwo",
+          "field": "commentOne"
+        },
+        "directive": "map"
+      }
+    },
+    {
+      "tag": "CreateArgument",
+      "location": {
+        "tag": "Directive",
+        "path": {
+          "tag": "Field",
+          "model": "StepTwo",
+          "field": "commentOne"
+        },
+        "directive": "map"
+      },
+      "argument": "",
+      "value": "\"comment_one\""
+    },
+    {
+      "tag": "CreateField",
+      "model": "StepTwo",
+      "field": "commentTwo",
+      "type": "String",
+      "arity": "Optional"
+    },
+    {
+      "tag": "CreateDirective",
+      "location": {
+        "path": {
+          "tag": "Field",
+          "model": "StepTwo",
+          "field": "commentTwo"
+        },
+        "directive": "map"
+      }
+    },
+    {
+      "tag": "CreateArgument",
+      "location": {
+        "tag": "Directive",
+        "path": {
+          "tag": "Field",
+          "model": "StepTwo",
+          "field": "commentTwo"
+        },
+        "directive": "map"
+      },
+      "argument": "",
+      "value": "\"comment_two\""
+    },
+    {
+      "tag": "CreateField",
+      "model": "StepTwo",
+      "field": "commentThree",
+      "type": "String",
+      "arity": "Optional"
+    },
+    {
+      "tag": "CreateDirective",
+      "location": {
+        "path": {
+          "tag": "Field",
+          "model": "StepTwo",
+          "field": "commentThree"
+        },
+        "directive": "map"
+      }
+    },
+    {
+      "tag": "CreateArgument",
+      "location": {
+        "tag": "Directive",
+        "path": {
+          "tag": "Field",
+          "model": "StepTwo",
+          "field": "commentThree"
+        },
+        "directive": "map"
+      },
+      "argument": "",
+      "value": "\"comment_three\""
     },
     {
       "tag": "CreateField",
@@ -1379,6 +1720,198 @@
       },
       "argument": "",
       "value": "\"step_six\""
+    },
+    {
+      "tag": "CreateField",
+      "model": "StepThree",
+      "field": "commentOne",
+      "type": "String",
+      "arity": "Optional"
+    },
+    {
+      "tag": "CreateDirective",
+      "location": {
+        "path": {
+          "tag": "Field",
+          "model": "StepThree",
+          "field": "commentOne"
+        },
+        "directive": "map"
+      }
+    },
+    {
+      "tag": "CreateArgument",
+      "location": {
+        "tag": "Directive",
+        "path": {
+          "tag": "Field",
+          "model": "StepThree",
+          "field": "commentOne"
+        },
+        "directive": "map"
+      },
+      "argument": "",
+      "value": "\"comment_one\""
+    },
+    {
+      "tag": "CreateField",
+      "model": "StepThree",
+      "field": "commentTwo",
+      "type": "String",
+      "arity": "Optional"
+    },
+    {
+      "tag": "CreateDirective",
+      "location": {
+        "path": {
+          "tag": "Field",
+          "model": "StepThree",
+          "field": "commentTwo"
+        },
+        "directive": "map"
+      }
+    },
+    {
+      "tag": "CreateArgument",
+      "location": {
+        "tag": "Directive",
+        "path": {
+          "tag": "Field",
+          "model": "StepThree",
+          "field": "commentTwo"
+        },
+        "directive": "map"
+      },
+      "argument": "",
+      "value": "\"comment_two\""
+    },
+    {
+      "tag": "CreateField",
+      "model": "StepThree",
+      "field": "commentThree",
+      "type": "String",
+      "arity": "Optional"
+    },
+    {
+      "tag": "CreateDirective",
+      "location": {
+        "path": {
+          "tag": "Field",
+          "model": "StepThree",
+          "field": "commentThree"
+        },
+        "directive": "map"
+      }
+    },
+    {
+      "tag": "CreateArgument",
+      "location": {
+        "tag": "Directive",
+        "path": {
+          "tag": "Field",
+          "model": "StepThree",
+          "field": "commentThree"
+        },
+        "directive": "map"
+      },
+      "argument": "",
+      "value": "\"comment_three\""
+    },
+    {
+      "tag": "CreateField",
+      "model": "StepThree",
+      "field": "commentFour",
+      "type": "String",
+      "arity": "Optional"
+    },
+    {
+      "tag": "CreateDirective",
+      "location": {
+        "path": {
+          "tag": "Field",
+          "model": "StepThree",
+          "field": "commentFour"
+        },
+        "directive": "map"
+      }
+    },
+    {
+      "tag": "CreateArgument",
+      "location": {
+        "tag": "Directive",
+        "path": {
+          "tag": "Field",
+          "model": "StepThree",
+          "field": "commentFour"
+        },
+        "directive": "map"
+      },
+      "argument": "",
+      "value": "\"comment_four\""
+    },
+    {
+      "tag": "CreateField",
+      "model": "StepThree",
+      "field": "commentFive",
+      "type": "String",
+      "arity": "Optional"
+    },
+    {
+      "tag": "CreateDirective",
+      "location": {
+        "path": {
+          "tag": "Field",
+          "model": "StepThree",
+          "field": "commentFive"
+        },
+        "directive": "map"
+      }
+    },
+    {
+      "tag": "CreateArgument",
+      "location": {
+        "tag": "Directive",
+        "path": {
+          "tag": "Field",
+          "model": "StepThree",
+          "field": "commentFive"
+        },
+        "directive": "map"
+      },
+      "argument": "",
+      "value": "\"comment_five\""
+    },
+    {
+      "tag": "CreateField",
+      "model": "StepThree",
+      "field": "commentSix",
+      "type": "String",
+      "arity": "Optional"
+    },
+    {
+      "tag": "CreateDirective",
+      "location": {
+        "path": {
+          "tag": "Field",
+          "model": "StepThree",
+          "field": "commentSix"
+        },
+        "directive": "map"
+      }
+    },
+    {
+      "tag": "CreateArgument",
+      "location": {
+        "tag": "Directive",
+        "path": {
+          "tag": "Field",
+          "model": "StepThree",
+          "field": "commentSix"
+        },
+        "directive": "map"
+      },
+      "argument": "",
+      "value": "\"comment_six\""
     },
     {
       "tag": "CreateField",
@@ -1766,6 +2299,230 @@
     {
       "tag": "CreateField",
       "model": "StepFour",
+      "field": "commentOne",
+      "type": "String",
+      "arity": "Optional"
+    },
+    {
+      "tag": "CreateDirective",
+      "location": {
+        "path": {
+          "tag": "Field",
+          "model": "StepFour",
+          "field": "commentOne"
+        },
+        "directive": "map"
+      }
+    },
+    {
+      "tag": "CreateArgument",
+      "location": {
+        "tag": "Directive",
+        "path": {
+          "tag": "Field",
+          "model": "StepFour",
+          "field": "commentOne"
+        },
+        "directive": "map"
+      },
+      "argument": "",
+      "value": "\"comment_one\""
+    },
+    {
+      "tag": "CreateField",
+      "model": "StepFour",
+      "field": "commentTwo",
+      "type": "String",
+      "arity": "Optional"
+    },
+    {
+      "tag": "CreateDirective",
+      "location": {
+        "path": {
+          "tag": "Field",
+          "model": "StepFour",
+          "field": "commentTwo"
+        },
+        "directive": "map"
+      }
+    },
+    {
+      "tag": "CreateArgument",
+      "location": {
+        "tag": "Directive",
+        "path": {
+          "tag": "Field",
+          "model": "StepFour",
+          "field": "commentTwo"
+        },
+        "directive": "map"
+      },
+      "argument": "",
+      "value": "\"comment_two\""
+    },
+    {
+      "tag": "CreateField",
+      "model": "StepFour",
+      "field": "commentThree",
+      "type": "String",
+      "arity": "Optional"
+    },
+    {
+      "tag": "CreateDirective",
+      "location": {
+        "path": {
+          "tag": "Field",
+          "model": "StepFour",
+          "field": "commentThree"
+        },
+        "directive": "map"
+      }
+    },
+    {
+      "tag": "CreateArgument",
+      "location": {
+        "tag": "Directive",
+        "path": {
+          "tag": "Field",
+          "model": "StepFour",
+          "field": "commentThree"
+        },
+        "directive": "map"
+      },
+      "argument": "",
+      "value": "\"comment_three\""
+    },
+    {
+      "tag": "CreateField",
+      "model": "StepFour",
+      "field": "commentFour",
+      "type": "String",
+      "arity": "Optional"
+    },
+    {
+      "tag": "CreateDirective",
+      "location": {
+        "path": {
+          "tag": "Field",
+          "model": "StepFour",
+          "field": "commentFour"
+        },
+        "directive": "map"
+      }
+    },
+    {
+      "tag": "CreateArgument",
+      "location": {
+        "tag": "Directive",
+        "path": {
+          "tag": "Field",
+          "model": "StepFour",
+          "field": "commentFour"
+        },
+        "directive": "map"
+      },
+      "argument": "",
+      "value": "\"comment_four\""
+    },
+    {
+      "tag": "CreateField",
+      "model": "StepFour",
+      "field": "commentFive",
+      "type": "String",
+      "arity": "Optional"
+    },
+    {
+      "tag": "CreateDirective",
+      "location": {
+        "path": {
+          "tag": "Field",
+          "model": "StepFour",
+          "field": "commentFive"
+        },
+        "directive": "map"
+      }
+    },
+    {
+      "tag": "CreateArgument",
+      "location": {
+        "tag": "Directive",
+        "path": {
+          "tag": "Field",
+          "model": "StepFour",
+          "field": "commentFive"
+        },
+        "directive": "map"
+      },
+      "argument": "",
+      "value": "\"comment_five\""
+    },
+    {
+      "tag": "CreateField",
+      "model": "StepFour",
+      "field": "commentSix",
+      "type": "String",
+      "arity": "Optional"
+    },
+    {
+      "tag": "CreateDirective",
+      "location": {
+        "path": {
+          "tag": "Field",
+          "model": "StepFour",
+          "field": "commentSix"
+        },
+        "directive": "map"
+      }
+    },
+    {
+      "tag": "CreateArgument",
+      "location": {
+        "tag": "Directive",
+        "path": {
+          "tag": "Field",
+          "model": "StepFour",
+          "field": "commentSix"
+        },
+        "directive": "map"
+      },
+      "argument": "",
+      "value": "\"comment_six\""
+    },
+    {
+      "tag": "CreateField",
+      "model": "StepFour",
+      "field": "commentSeven",
+      "type": "String",
+      "arity": "Optional"
+    },
+    {
+      "tag": "CreateDirective",
+      "location": {
+        "path": {
+          "tag": "Field",
+          "model": "StepFour",
+          "field": "commentSeven"
+        },
+        "directive": "map"
+      }
+    },
+    {
+      "tag": "CreateArgument",
+      "location": {
+        "tag": "Directive",
+        "path": {
+          "tag": "Field",
+          "model": "StepFour",
+          "field": "commentSeven"
+        },
+        "directive": "map"
+      },
+      "argument": "",
+      "value": "\"comment_seven\""
+    },
+    {
+      "tag": "CreateField",
+      "model": "StepFour",
       "field": "project",
       "type": "Project",
       "arity": "Required"
@@ -2049,6 +2806,134 @@
       },
       "argument": "",
       "value": "\"step_four\""
+    },
+    {
+      "tag": "CreateField",
+      "model": "StepFive",
+      "field": "commentOne",
+      "type": "String",
+      "arity": "Optional"
+    },
+    {
+      "tag": "CreateDirective",
+      "location": {
+        "path": {
+          "tag": "Field",
+          "model": "StepFive",
+          "field": "commentOne"
+        },
+        "directive": "map"
+      }
+    },
+    {
+      "tag": "CreateArgument",
+      "location": {
+        "tag": "Directive",
+        "path": {
+          "tag": "Field",
+          "model": "StepFive",
+          "field": "commentOne"
+        },
+        "directive": "map"
+      },
+      "argument": "",
+      "value": "\"comment_one\""
+    },
+    {
+      "tag": "CreateField",
+      "model": "StepFive",
+      "field": "commentTwo",
+      "type": "String",
+      "arity": "Optional"
+    },
+    {
+      "tag": "CreateDirective",
+      "location": {
+        "path": {
+          "tag": "Field",
+          "model": "StepFive",
+          "field": "commentTwo"
+        },
+        "directive": "map"
+      }
+    },
+    {
+      "tag": "CreateArgument",
+      "location": {
+        "tag": "Directive",
+        "path": {
+          "tag": "Field",
+          "model": "StepFive",
+          "field": "commentTwo"
+        },
+        "directive": "map"
+      },
+      "argument": "",
+      "value": "\"comment_two\""
+    },
+    {
+      "tag": "CreateField",
+      "model": "StepFive",
+      "field": "commentThree",
+      "type": "String",
+      "arity": "Optional"
+    },
+    {
+      "tag": "CreateDirective",
+      "location": {
+        "path": {
+          "tag": "Field",
+          "model": "StepFive",
+          "field": "commentThree"
+        },
+        "directive": "map"
+      }
+    },
+    {
+      "tag": "CreateArgument",
+      "location": {
+        "tag": "Directive",
+        "path": {
+          "tag": "Field",
+          "model": "StepFive",
+          "field": "commentThree"
+        },
+        "directive": "map"
+      },
+      "argument": "",
+      "value": "\"comment_three\""
+    },
+    {
+      "tag": "CreateField",
+      "model": "StepFive",
+      "field": "commentFour",
+      "type": "String",
+      "arity": "Optional"
+    },
+    {
+      "tag": "CreateDirective",
+      "location": {
+        "path": {
+          "tag": "Field",
+          "model": "StepFive",
+          "field": "commentFour"
+        },
+        "directive": "map"
+      }
+    },
+    {
+      "tag": "CreateArgument",
+      "location": {
+        "tag": "Directive",
+        "path": {
+          "tag": "Field",
+          "model": "StepFive",
+          "field": "commentFour"
+        },
+        "directive": "map"
+      },
+      "argument": "",
+      "value": "\"comment_four\""
     },
     {
       "tag": "CreateField",
@@ -2340,6 +3225,134 @@
     {
       "tag": "CreateField",
       "model": "StepSix",
+      "field": "commentOne",
+      "type": "String",
+      "arity": "Optional"
+    },
+    {
+      "tag": "CreateDirective",
+      "location": {
+        "path": {
+          "tag": "Field",
+          "model": "StepSix",
+          "field": "commentOne"
+        },
+        "directive": "map"
+      }
+    },
+    {
+      "tag": "CreateArgument",
+      "location": {
+        "tag": "Directive",
+        "path": {
+          "tag": "Field",
+          "model": "StepSix",
+          "field": "commentOne"
+        },
+        "directive": "map"
+      },
+      "argument": "",
+      "value": "\"comment_one\""
+    },
+    {
+      "tag": "CreateField",
+      "model": "StepSix",
+      "field": "commentTwo",
+      "type": "String",
+      "arity": "Optional"
+    },
+    {
+      "tag": "CreateDirective",
+      "location": {
+        "path": {
+          "tag": "Field",
+          "model": "StepSix",
+          "field": "commentTwo"
+        },
+        "directive": "map"
+      }
+    },
+    {
+      "tag": "CreateArgument",
+      "location": {
+        "tag": "Directive",
+        "path": {
+          "tag": "Field",
+          "model": "StepSix",
+          "field": "commentTwo"
+        },
+        "directive": "map"
+      },
+      "argument": "",
+      "value": "\"comment_two\""
+    },
+    {
+      "tag": "CreateField",
+      "model": "StepSix",
+      "field": "commentThree",
+      "type": "String",
+      "arity": "Optional"
+    },
+    {
+      "tag": "CreateDirective",
+      "location": {
+        "path": {
+          "tag": "Field",
+          "model": "StepSix",
+          "field": "commentThree"
+        },
+        "directive": "map"
+      }
+    },
+    {
+      "tag": "CreateArgument",
+      "location": {
+        "tag": "Directive",
+        "path": {
+          "tag": "Field",
+          "model": "StepSix",
+          "field": "commentThree"
+        },
+        "directive": "map"
+      },
+      "argument": "",
+      "value": "\"comment_three\""
+    },
+    {
+      "tag": "CreateField",
+      "model": "StepSix",
+      "field": "commentFour",
+      "type": "String",
+      "arity": "Optional"
+    },
+    {
+      "tag": "CreateDirective",
+      "location": {
+        "path": {
+          "tag": "Field",
+          "model": "StepSix",
+          "field": "commentFour"
+        },
+        "directive": "map"
+      }
+    },
+    {
+      "tag": "CreateArgument",
+      "location": {
+        "tag": "Directive",
+        "path": {
+          "tag": "Field",
+          "model": "StepSix",
+          "field": "commentFour"
+        },
+        "directive": "map"
+      },
+      "argument": "",
+      "value": "\"comment_four\""
+    },
+    {
+      "tag": "CreateField",
+      "model": "StepSix",
       "field": "project",
       "type": "Project",
       "arity": "Required"
@@ -2627,6 +3640,134 @@
     {
       "tag": "CreateField",
       "model": "StepSeven",
+      "field": "commentOne",
+      "type": "String",
+      "arity": "Optional"
+    },
+    {
+      "tag": "CreateDirective",
+      "location": {
+        "path": {
+          "tag": "Field",
+          "model": "StepSeven",
+          "field": "commentOne"
+        },
+        "directive": "map"
+      }
+    },
+    {
+      "tag": "CreateArgument",
+      "location": {
+        "tag": "Directive",
+        "path": {
+          "tag": "Field",
+          "model": "StepSeven",
+          "field": "commentOne"
+        },
+        "directive": "map"
+      },
+      "argument": "",
+      "value": "\"comment_one\""
+    },
+    {
+      "tag": "CreateField",
+      "model": "StepSeven",
+      "field": "commentTwo",
+      "type": "String",
+      "arity": "Optional"
+    },
+    {
+      "tag": "CreateDirective",
+      "location": {
+        "path": {
+          "tag": "Field",
+          "model": "StepSeven",
+          "field": "commentTwo"
+        },
+        "directive": "map"
+      }
+    },
+    {
+      "tag": "CreateArgument",
+      "location": {
+        "tag": "Directive",
+        "path": {
+          "tag": "Field",
+          "model": "StepSeven",
+          "field": "commentTwo"
+        },
+        "directive": "map"
+      },
+      "argument": "",
+      "value": "\"comment_two\""
+    },
+    {
+      "tag": "CreateField",
+      "model": "StepSeven",
+      "field": "commentThree",
+      "type": "String",
+      "arity": "Optional"
+    },
+    {
+      "tag": "CreateDirective",
+      "location": {
+        "path": {
+          "tag": "Field",
+          "model": "StepSeven",
+          "field": "commentThree"
+        },
+        "directive": "map"
+      }
+    },
+    {
+      "tag": "CreateArgument",
+      "location": {
+        "tag": "Directive",
+        "path": {
+          "tag": "Field",
+          "model": "StepSeven",
+          "field": "commentThree"
+        },
+        "directive": "map"
+      },
+      "argument": "",
+      "value": "\"comment_three\""
+    },
+    {
+      "tag": "CreateField",
+      "model": "StepSeven",
+      "field": "commentFour",
+      "type": "String",
+      "arity": "Optional"
+    },
+    {
+      "tag": "CreateDirective",
+      "location": {
+        "path": {
+          "tag": "Field",
+          "model": "StepSeven",
+          "field": "commentFour"
+        },
+        "directive": "map"
+      }
+    },
+    {
+      "tag": "CreateArgument",
+      "location": {
+        "tag": "Directive",
+        "path": {
+          "tag": "Field",
+          "model": "StepSeven",
+          "field": "commentFour"
+        },
+        "directive": "map"
+      },
+      "argument": "",
+      "value": "\"comment_four\""
+    },
+    {
+      "tag": "CreateField",
+      "model": "StepSeven",
       "field": "project",
       "type": "Project",
       "arity": "Required"
@@ -2882,6 +4023,102 @@
     {
       "tag": "CreateField",
       "model": "StepEight",
+      "field": "commentOne",
+      "type": "String",
+      "arity": "Optional"
+    },
+    {
+      "tag": "CreateDirective",
+      "location": {
+        "path": {
+          "tag": "Field",
+          "model": "StepEight",
+          "field": "commentOne"
+        },
+        "directive": "map"
+      }
+    },
+    {
+      "tag": "CreateArgument",
+      "location": {
+        "tag": "Directive",
+        "path": {
+          "tag": "Field",
+          "model": "StepEight",
+          "field": "commentOne"
+        },
+        "directive": "map"
+      },
+      "argument": "",
+      "value": "\"comment_one\""
+    },
+    {
+      "tag": "CreateField",
+      "model": "StepEight",
+      "field": "commentTwo",
+      "type": "String",
+      "arity": "Optional"
+    },
+    {
+      "tag": "CreateDirective",
+      "location": {
+        "path": {
+          "tag": "Field",
+          "model": "StepEight",
+          "field": "commentTwo"
+        },
+        "directive": "map"
+      }
+    },
+    {
+      "tag": "CreateArgument",
+      "location": {
+        "tag": "Directive",
+        "path": {
+          "tag": "Field",
+          "model": "StepEight",
+          "field": "commentTwo"
+        },
+        "directive": "map"
+      },
+      "argument": "",
+      "value": "\"comment_two\""
+    },
+    {
+      "tag": "CreateField",
+      "model": "StepEight",
+      "field": "commentThree",
+      "type": "String",
+      "arity": "Optional"
+    },
+    {
+      "tag": "CreateDirective",
+      "location": {
+        "path": {
+          "tag": "Field",
+          "model": "StepEight",
+          "field": "commentThree"
+        },
+        "directive": "map"
+      }
+    },
+    {
+      "tag": "CreateArgument",
+      "location": {
+        "tag": "Directive",
+        "path": {
+          "tag": "Field",
+          "model": "StepEight",
+          "field": "commentThree"
+        },
+        "directive": "map"
+      },
+      "argument": "",
+      "value": "\"comment_three\""
+    },
+    {
+      "tag": "CreateField",
+      "model": "StepEight",
       "field": "project",
       "type": "Project",
       "arity": "Required"
@@ -3101,6 +4338,70 @@
       },
       "argument": "",
       "value": "\"step_two\""
+    },
+    {
+      "tag": "CreateField",
+      "model": "StepNine",
+      "field": "commentOne",
+      "type": "String",
+      "arity": "Optional"
+    },
+    {
+      "tag": "CreateDirective",
+      "location": {
+        "path": {
+          "tag": "Field",
+          "model": "StepNine",
+          "field": "commentOne"
+        },
+        "directive": "map"
+      }
+    },
+    {
+      "tag": "CreateArgument",
+      "location": {
+        "tag": "Directive",
+        "path": {
+          "tag": "Field",
+          "model": "StepNine",
+          "field": "commentOne"
+        },
+        "directive": "map"
+      },
+      "argument": "",
+      "value": "\"comment_one\""
+    },
+    {
+      "tag": "CreateField",
+      "model": "StepNine",
+      "field": "commentTwo",
+      "type": "String",
+      "arity": "Optional"
+    },
+    {
+      "tag": "CreateDirective",
+      "location": {
+        "path": {
+          "tag": "Field",
+          "model": "StepNine",
+          "field": "commentTwo"
+        },
+        "directive": "map"
+      }
+    },
+    {
+      "tag": "CreateArgument",
+      "location": {
+        "tag": "Directive",
+        "path": {
+          "tag": "Field",
+          "model": "StepNine",
+          "field": "commentTwo"
+        },
+        "directive": "map"
+      },
+      "argument": "",
+      "value": "\"comment_two\""
     },
     {
       "tag": "CreateField",
