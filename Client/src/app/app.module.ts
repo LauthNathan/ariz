@@ -40,6 +40,7 @@ import { LanguageSelectionComponent } from './gui/language-selection/language-se
 import { ProjectCardComponent } from './gui/project-card/project-card.component';
 import { NewCardComponent } from './gui/new-card/new-card.component';
 import { NewProjectComponent } from './gui/new-project/new-project.component';
+import { ProjectProgressComponent } from './gui/project-progress/project-progress.component';
 
 @NgModule({
   declarations: [
@@ -55,7 +56,8 @@ import { NewProjectComponent } from './gui/new-project/new-project.component';
     LanguageSelectionComponent,
     ProjectCardComponent,
     NewCardComponent,
-    NewProjectComponent
+    NewProjectComponent,
+    ProjectProgressComponent
   ],
   imports: [
     BrowserModule,

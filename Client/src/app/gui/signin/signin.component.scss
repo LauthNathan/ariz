@@ -79,16 +79,6 @@ h1.active {
 }
 
 
-@media (max-width: 1200px) {
-  .illustration {
-    display: none;
-  }
-  .page {
-    position: relative;
-    grid-template-columns: 1fr;
-  }
-}
-
 #logo {
   position: absolute;
   top: 32px;
@@ -103,4 +93,23 @@ h1.active {
   top: 32px;
   right: 32px;
   z-index: 999;
+}
+
+
+@media (max-width: 1200px) {
+  .illustration {
+    display: none;
+  }
+  .page {
+    position: relative;
+    grid-template-columns: 1fr;
+  }
+
+  #logo {
+    position: absolute;
+    top: 32px;
+    left: 32px;
+    width: 25%;
+    margin-bottom: 64px;
+  }
 }
