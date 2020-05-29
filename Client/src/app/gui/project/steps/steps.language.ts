@@ -230,8 +230,15 @@ export class StepsLanguage {
     [
       {
         title: '1. Reformuler simplement le problème et ses caractéristiques',
-        showMore: 'Montrer plus de texte',
-        question: 'Ici est la question qui doit être posé'
+        showMore: 'Enoncer la phrase de définition du système :\n' +
+          'Le système (définir) dont la Fonction Principale (FPS) est (définir) comprend (énumérer les principales composantes du système).\n' +
+          '\n' +
+          'Définir la contradiction technique et son miroir :\n' +
+          'la Contradiction Technique 1 (CT1) et son miroir : la Contradiction Technique 2 (CT2).\n' +
+          '\n' +
+          'Enoncer la phrase de reformulation du problème :\n' +
+          'Il faut (définir le résultat à atteindre) avec un minimum de modifications dans le système.\n',
+        question: 'Reformuler simplement le problème et ses caractéristiques :'
       },
       {
         title: '2. Définir l\'objet et l\'outil',

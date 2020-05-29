@@ -20,11 +20,19 @@ export class TokenInterceptor implements HttpInterceptor {
   }
 
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-    req = req.clone({
-      setHeaders: {
-      'auth-token': localStorage.getItem('arizToolToken')
-      }
-    });
+    if (localStorage.getItem('arizToolToken')) {
+      req = req.clone({
+        setHeaders: {
+          'auth-token': localStorage.getItem('arizToolToken')
+        }
+      });
+    } else {
+      req = req.clone({
+        setHeaders: {
+          'auth-token': ''
+        }
+      });
+    }
 
     return next.handle(req).do((event: HttpEvent<any>) => {
       if (event instanceof HttpResponse) {
@@ -35,7 +43,7 @@ export class TokenInterceptor implements HttpInterceptor {
         switch (err.status) {
           case 401: {
             localStorage.removeItem('arizToolToken');
-            this.router.navigate(['login']);
+            this.router.navigate(['signin']);
             break;
           }
           case 403:

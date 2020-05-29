@@ -12,7 +12,7 @@ export class AppComponent implements OnInit {
   // TODO : Get this variable form cookie or for the given user.
   selectedLanguage = localStorage.getItem('arizToolLanguageCode');
   languages: string[] = [
-    'eng',
+    'gb',
     'fr'
   ];
 
@@ -23,7 +23,7 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
     if (!this.selectedLanguage) {
-      this.selectedLanguage = 'eng';
+      this.selectedLanguage = 'gb';
     }
     this.loadNewLanguage(this.selectedLanguage, true);
   }

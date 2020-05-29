@@ -36,6 +36,7 @@ import {CommentLanguage} from './gui/project/steps/comment/comment.language';
 import {MoreInformationLanguage} from './gui/project/steps/more-information/more-information.language';
 import {StepsLanguage} from './gui/project/steps/steps.language';
 import { LanguageSelectionComponent } from './gui/language-selection/language-selection.component';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
 
 @NgModule({
   declarations: [
@@ -67,7 +68,8 @@ import { LanguageSelectionComponent } from './gui/language-selection/language-se
     MatCardModule,
     MatIconModule,
     MatExpansionModule,
-    MatSelectModule
+    MatSelectModule,
+    MatProgressBarModule
   ],
   providers: [
     {
