@@ -5,6 +5,9 @@ import {SigninComponent} from './gui/signin/signin.component';
 import {DashboardComponent} from './gui/dashboard/dashboard.component';
 import {ProjectComponent} from './gui/project/project.component';
 import {BasicInputComponent} from './gui/project/steps/steps-type/basic-input/basic-input.component';
+import {Step1Component} from './gui/project/steps/step1/step1.component';
+import {Step5Component} from './gui/project/steps/step5/step5.component';
+import {Step6Component} from './gui/project/steps/step6/step6.component';
 
 
 const routes: Routes = [
@@ -42,7 +45,7 @@ const routes: Routes = [
       {
         path: 'one/one',
         data: {step: 1, subStep: 1},
-        component: BasicInputComponent
+        component: Step1Component
       },
       {
         path: 'one/two',
@@ -58,11 +61,11 @@ const routes: Routes = [
       },
       {
         path: 'one/five',
-        component: BasicInputComponent
+        component: Step5Component
       },
       {
         path: 'one/six',
-        component: BasicInputComponent
+        component: Step6Component
       },
       {
         path: 'one/seven',

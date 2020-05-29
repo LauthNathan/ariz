@@ -41,6 +41,9 @@ import { ProjectCardComponent } from './gui/project-card/project-card.component'
 import { NewCardComponent } from './gui/new-card/new-card.component';
 import { NewProjectComponent } from './gui/new-project/new-project.component';
 import { ProjectProgressComponent } from './gui/project-progress/project-progress.component';
+import { Step1Component } from './gui/project/steps/step1/step1.component';
+import { Step5Component } from './gui/project/steps/step5/step5.component';
+import { Step6Component } from './gui/project/steps/step6/step6.component';
 
 @NgModule({
   declarations: [
@@ -57,7 +60,10 @@ import { ProjectProgressComponent } from './gui/project-progress/project-progres
     ProjectCardComponent,
     NewCardComponent,
     NewProjectComponent,
-    ProjectProgressComponent
+    ProjectProgressComponent,
+    Step1Component,
+    Step5Component,
+    Step6Component
   ],
   imports: [
     BrowserModule,
