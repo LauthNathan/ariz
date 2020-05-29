@@ -11,6 +11,7 @@ const router = Router();
 
 
 // ===== REGISTER =====
+// TODO: Revoir path pour les images avec Linux
 router.post('/register', upload.single('image'), async (req, res) => {
   // Validate Query
   const { error } = userValidation.validate(req.body);
