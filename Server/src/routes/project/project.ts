@@ -1,9 +1,11 @@
 import { Router } from 'express';
+import path from 'path';
 import { prisma } from '../../index'
 import { auth } from '../authentication/jwt';
+import { isOwner } from './utils';
+import { upload } from '../utils';
 
 const router = Router();
-
 
 /**
  * Get all projects of authenticated user
@@ -49,11 +51,8 @@ router.get('/projects/:id', auth, async (req, res) => {
         stepNine: true
       }
     });
-    if (project && (project.owner.id === user.id || project.collaborators.includes(user.id))) {
-      res.json({project: project});
-    } else {
-      res.status(401).json({error: 'User not authorized to update this project'});
-    }
+    if (isOwner(user.id, project)) res.json({project: project});
+    else res.status(401).json({error: 'User not authorized to update this project'});
   } catch (e) {
     res.status(400).json({error: e});
   }
@@ -63,14 +62,18 @@ router.get('/projects/:id', auth, async (req, res) => {
 /**
  * Create a project owned by authenticated user
  */
-router.post('/projects', auth, async (req, res) => {
-  const user = (req as any).user
+router.post('/projects', auth, upload.single('image'), async (req, res) => {
+  const user = (req as any).user;
   try {
+    const imagePath = req.file.filename;
     const project = await prisma.project.create({
       data: {
+        name: req.body.name,
+        image: imagePath,
         owner: {
           connect: { id: user.id }
-        }
+        },
+        collaborators: req.body.collaborators
       }
     });
     res.json({project: project});

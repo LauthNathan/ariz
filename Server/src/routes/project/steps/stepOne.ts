@@ -1,6 +1,7 @@
 import { Router } from 'express';
 import { prisma } from '../../../index'
 import { auth } from '../../authentication/jwt';
+import { isOwnerOrCollaborator } from '../utils';
 
 const router = Router();
 
@@ -29,7 +30,7 @@ router.post('/projects/:id/1', auth, async (req, res) => {
         }
       }
     });
-    if (project && [project.ownerId, ...project.collaborators.map(c => c.id)].includes(user.id)) {
+    if (isOwnerOrCollaborator(user.id, project)) {
       const step = await prisma.stepOne.update({
         where: { projectId: req.params.id },
         data: data

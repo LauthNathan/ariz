@@ -25,6 +25,7 @@ import {ProjectLanguage} from './gui/project/project.language';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatTreeModule} from '@angular/material/tree';
 import {MatIconModule} from '@angular/material/icon';
+import {MatChipsModule} from '@angular/material/chips';
 import { BasicInputComponent } from './gui/project/steps/steps-type/basic-input/basic-input.component';
 import {BasicInputLanguage} from './gui/project/steps/steps-type/basic-input/basic-input.language';
 import {MatCardModule} from '@angular/material/card';
@@ -36,6 +37,10 @@ import {CommentLanguage} from './gui/project/steps/comment/comment.language';
 import {MoreInformationLanguage} from './gui/project/steps/more-information/more-information.language';
 import {StepsLanguage} from './gui/project/steps/steps.language';
 import { LanguageSelectionComponent } from './gui/language-selection/language-selection.component';
+import { ProjectCardComponent } from './gui/project-card/project-card.component';
+import { NewCardComponent } from './gui/new-card/new-card.component';
+import { NewProjectComponent } from './gui/new-project/new-project.component';
+import { ProjectProgressComponent } from './gui/project-progress/project-progress.component';
 
 @NgModule({
   declarations: [
@@ -48,7 +53,11 @@ import { LanguageSelectionComponent } from './gui/language-selection/language-se
     BasicInputComponent,
     CommentComponent,
     MoreInformationComponent,
-    LanguageSelectionComponent
+    LanguageSelectionComponent,
+    ProjectCardComponent,
+    NewCardComponent,
+    NewProjectComponent,
+    ProjectProgressComponent
   ],
   imports: [
     BrowserModule,
@@ -67,7 +76,8 @@ import { LanguageSelectionComponent } from './gui/language-selection/language-se
     MatCardModule,
     MatIconModule,
     MatExpansionModule,
-    MatSelectModule
+    MatSelectModule,
+    MatChipsModule
   ],
   providers: [
     {
