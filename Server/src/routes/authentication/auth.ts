@@ -4,12 +4,15 @@ import { prisma } from '../../index';
 import { userValidation, userLoginValidation } from '../../validation';
 import jwt from 'jsonwebtoken';
 import bcrypt from 'bcryptjs';
+import { upload } from '../utils';
+import { auth } from './jwt';
 
 const router = Router();
 
 
 // ===== REGISTER =====
-router.post('/register', async (req, res) => {
+// TODO: Revoir path pour les images avec Linux
+router.post('/register', upload.single('image'), async (req, res) => {
   // Validate Query
   const { error } = userValidation.validate(req.body);
   if (error) return res.status(400).json(error);
@@ -18,20 +21,23 @@ router.post('/register', async (req, res) => {
   const salt = await bcrypt.genSalt(10);
   const hashedPassword = await bcrypt.hash(req.body.password, salt);
 
-  // Query
-  const userQuery = prisma.user.create({
-    data: {
-      mail: req.body.mail,
-      password: hashedPassword,
-      username: req.body.username,
-      role: req.body.role
-    }
-  });
-
   try {
+    console.log(req.body)
+    console.log(req.file)
+    const imagePath = req.file ? req.file.filename : 'user.png';
+    const userQuery = prisma.user.create({
+      data: {
+        mail: req.body.mail,
+        password: hashedPassword,
+        username: req.body.username,
+        image: imagePath,
+        role: parseInt(req.body.role)
+      }
+    });
     res.json(await userQuery);
   } catch (e) {
-    res.status(400).json(e);
+    console.log(e)
+    res.status(400).json({error: e});
   }
 });
 
@@ -69,9 +75,39 @@ router.post('/login', async (req, res) => {
 
 // ===== USERS =====
 router.get('/users', async (req, res) => {
-  const users = await prisma.user.findMany();
-  res.send(users);
+  try {
+    const users = await prisma.user.findMany();
+    res.json({users});
+  } catch (e) {
+    res.status(400).json({error: e});
+  }
 });
 
+router.get('/users/:id', async (req, res) => {
+  try {
+    const user = await prisma.user.findOne({
+      where: {id: req.params.id}
+    });
+    res.json({user});
+  } catch (e) {
+    res.status(400).json({error: e});
+  }
+});
+
+router.put('/users/:id', auth, upload.single('image'), async (req, res) => {
+  const user = (req as any).user
+  try {
+    const imagePath = req.file.filename;
+    const user = await prisma.user.update({
+      where: {id: req.params.id},
+      data: {
+        image: imagePath
+      }
+    });
+    res.json({user});
+  } catch (e) {
+    res.status(400).json({error: e})
+  }
+})
 
 export default router;

@@ -19,6 +19,7 @@ const app = express();
 // Middlewares
 app.use(cors());
 app.use(express.json());
+app.use('/public', express.static('uploads'));
 
 // Routes
 app.use('/api', [authRoute, projectRoute, stepOneRoute]);

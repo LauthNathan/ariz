@@ -4,7 +4,8 @@ export const userValidation = Joi.object({
   username: Joi.string().min(3).required(),
   mail: Joi.string().email().required(),
   password: Joi.string().min(3).required(),
-  role: Joi.number().required()
+  image: Joi.any(),
+  role: Joi.any().required()
 });
 
 export const userLoginValidation = Joi.object({

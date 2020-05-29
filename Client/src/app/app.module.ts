@@ -25,6 +25,7 @@ import {ProjectLanguage} from './gui/project/project.language';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatTreeModule} from '@angular/material/tree';
 import {MatIconModule} from '@angular/material/icon';
+import {MatChipsModule} from '@angular/material/chips';
 import { BasicInputComponent } from './gui/project/steps/steps-type/basic-input/basic-input.component';
 import {BasicInputLanguage} from './gui/project/steps/steps-type/basic-input/basic-input.language';
 import {MatCardModule} from '@angular/material/card';
@@ -36,7 +37,13 @@ import {CommentLanguage} from './gui/project/steps/comment/comment.language';
 import {MoreInformationLanguage} from './gui/project/steps/more-information/more-information.language';
 import {StepsLanguage} from './gui/project/steps/steps.language';
 import { LanguageSelectionComponent } from './gui/language-selection/language-selection.component';
-import {MatProgressBarModule} from '@angular/material/progress-bar';
+import { ProjectCardComponent } from './gui/project-card/project-card.component';
+import { NewCardComponent } from './gui/new-card/new-card.component';
+import { NewProjectComponent } from './gui/new-project/new-project.component';
+import { ProjectProgressComponent } from './gui/project-progress/project-progress.component';
+import { Step1Component } from './gui/project/steps/step1/step1.component';
+import { Step5Component } from './gui/project/steps/step5/step5.component';
+import { Step6Component } from './gui/project/steps/step6/step6.component';
 
 @NgModule({
   declarations: [
@@ -49,7 +56,14 @@ import {MatProgressBarModule} from '@angular/material/progress-bar';
     BasicInputComponent,
     CommentComponent,
     MoreInformationComponent,
-    LanguageSelectionComponent
+    LanguageSelectionComponent,
+    ProjectCardComponent,
+    NewCardComponent,
+    NewProjectComponent,
+    ProjectProgressComponent,
+    Step1Component,
+    Step5Component,
+    Step6Component
   ],
   imports: [
     BrowserModule,
@@ -69,7 +83,7 @@ import {MatProgressBarModule} from '@angular/material/progress-bar';
     MatIconModule,
     MatExpansionModule,
     MatSelectModule,
-    MatProgressBarModule
+    MatChipsModule
   ],
   providers: [
     {

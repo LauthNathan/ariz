@@ -1,0 +1,36 @@
+<div class="container">
+  <h1>New project</h1>
+  <form [formGroup]="formProject">
+    <mat-form-field appearance="fill">
+      <mat-label>Project name</mat-label>
+      <input matInput placeholder="Marteau" formControlName="name">
+      <!-- check si le nom du projet existe déjà pour ce user -->
+      <mat-error *ngIf="0">
+        Ce nom existe déjà
+      </mat-error>
+    </mat-form-field>
+
+    <p>File upload jsp si t'as un truc on pourrait faire une zone drag&drop</p>
+
+    <mat-form-field class="example-chip-list" appearance="fill">
+      <mat-label>Collaborators</mat-label>
+      <mat-chip-list #chipList aria-label="Fruit selection">
+        <mat-chip *ngFor="let user of users" [selectable]="selectable"
+                 [removable]="removable" (removed)="remove(user)">
+          {{user.name}}
+          <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+        </mat-chip>
+        <input placeholder="Type collaborators username..."
+               [matChipInputFor]="chipList"
+               [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+               [matChipInputAddOnBlur]="addOnBlur"
+               (matChipInputTokenEnd)="add($event)"
+               formControlName="collaborators">
+      </mat-chip-list>
+    </mat-form-field>
+
+    <div>
+      <button mat-raised-button color="primary">CREATE PROJECT</button>
+    </div>
+  </form>
+</div>
