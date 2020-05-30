@@ -13,6 +13,8 @@ export class Step5Component implements OnInit {
   elements = [];
   links = [];
   ct = '';
+  intensifyConflict = '';
+  selectedCt = '';
 
   constructor(private router: Router) {
   }
@@ -21,11 +23,20 @@ export class Step5Component implements OnInit {
     const majorStep = NumberUtils.stringToNumbers(this.router.url.split('/')[3]);
     const minorStep = NumberUtils.stringToNumbers(this.router.url.split('/')[4]);
     // TODO: récupérer les éléments du localStorage
-    this.elements = ["Gaz", "Bille"];
+    this.elements.push(localStorage.getItem('objectStepTwo'));
+    this.elements.push(localStorage.getItem('toolStepTwo'));
     // TODO: récupérer les liens du localStorage
-    this.links = ["Impact", "Accélération"];
+    this.links = JSON.parse(localStorage.getItem('linksStepThree'));
     // TODO: récupérer le texte du CT de l'étape précédente du localStorage
-    this.ct = "Vitesse rapide";
+    this.selectedCt = localStorage.getItem('selectedCtStepFour');
+    console.log(this.selectedCt);
+    if (this.selectedCt === '1') {
+      this.ct = localStorage.getItem('ctOneStepThree');
+    } else if (this.selectedCt === '2') {
+      this.ct = localStorage.getItem('ctTwoStepThree');
+    }
+    this.comment = localStorage.getItem('commentStepFive');
+    this.intensifyConflict = localStorage.getItem('intensifyConflictStepFive');
   }
 
   /**
@@ -41,7 +52,37 @@ export class Step5Component implements OnInit {
    *
    * @param comment - The comment from commentComponent.
    */
-  setComment(comment: string) {
+  setComment(comment: string): void {
     this.comment = comment;
+    localStorage.setItem('commentStepFive', comment);
+  }
+
+  /**
+   * Set ct to the localstorage.
+   */
+  setCt(): void {
+    if (this.selectedCt === '1') {
+      localStorage.setItem('ctOneStepThree', this.ct);
+    } else if (this.selectedCt === '2') {
+      localStorage.setItem('ctTwoStepThree', this.ct);
+    }
+  }
+
+  /**
+   * Set the links to the localstorage.
+   *
+   * @param link - The link to update.
+   * @param index - The index in links array.
+   */
+  setLinks(link: string, index: number): void {
+    this.links[index] = link;
+    localStorage.setItem('linksStepThree', JSON.stringify(this.links));
+  }
+
+  /**
+   * Set intensifyConflict to the localstorage.
+   */
+  setIntensifyConflict(): void {
+    localStorage.setItem('intensifyConflictStepFive', this.intensifyConflict);
   }
 }

@@ -24,4 +24,12 @@ export class ProjectComponent implements OnInit {
     this.dataSource.data = this.projectText.steps;
   }
 
+  /**
+   * Simulate click on expend node.
+   *
+   * @param name - The name of the node.
+   */
+  triggerClick(name: string): void {
+    document.getElementById('toggleButton' + name).click();
+  }
 }

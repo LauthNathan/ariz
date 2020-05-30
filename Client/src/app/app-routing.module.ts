@@ -11,6 +11,7 @@ import {Step6Component} from './gui/project/steps/step6/step6.component';
 import { Step2Component } from './gui/project/steps/step2/step2.component';
 import { Step3Component } from './gui/project/steps/step3/step3.component';
 import { Step4Component } from './gui/project/steps/step4/step4.component';
+import {ProjectResolver} from './resolver/ProjectResolver';
 
 
 const routes: Routes = [
@@ -38,6 +39,7 @@ const routes: Routes = [
   },
   {
     path: 'project/:id',
+    resolve: {projectData: ProjectResolver},
     component: ProjectComponent,
     children: [
       {
@@ -80,7 +82,10 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
+  providers: [
+    ProjectResolver
+  ]
 })
 export class AppRoutingModule {
 }

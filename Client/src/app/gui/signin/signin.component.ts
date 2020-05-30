@@ -2,6 +2,10 @@ import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {StringUtils} from '../../utils/string.utils';
 import {ISigninLanguage, SigninLanguage} from './signin.language';
+import {UserService} from '../../services/user/user.service';
+import {LoginDto, UserToCreateDto} from '../../../model';
+import {Router} from '@angular/router';
+import {NotificationService} from '../../services/notification/notification.service';
 
 @Component({
   selector: 'app-signin',
@@ -68,7 +72,10 @@ export class SigninComponent implements OnInit {
   }
 
 
-  constructor(private readonly signinLanguage: SigninLanguage) {
+  constructor(private readonly signinLanguage: SigninLanguage,
+              private readonly userService: UserService,
+              private router: Router,
+              private readonly notificationService: NotificationService) {
   }
 
   ngOnInit() {
@@ -112,5 +119,44 @@ export class SigninComponent implements OnInit {
   setSignUpActive(): void {
     this.signIn = false;
     this.signUp = true;
+  }
+
+  /**
+   * Log the user in the application, or throw an error, if the user send wrong information.
+   */
+  login() {
+    const userToLogin: LoginDto = {
+      mail: this.usernameSignIn.value,
+      password: this.passwordSignIn.value
+    };
+    this.userService.login(userToLogin)
+      .then(() => {
+        this.router.navigate(['dashboard']);
+      })
+      .catch(() => {
+        this.notificationService.addErrorToast(this.signinText.loginError);
+      });
+  }
+
+  /**
+   * Create a new user.
+   */
+  createUser(): void {
+    const userToAdd: UserToCreateDto = {
+      mail: this.usernameSignUp.value,
+      username: this.nameSignUp.value,
+      password: this.passwordSignUp.value,
+      role: 1
+    };
+
+    this.userService.login(userToAdd).then(() => {
+      const userLogin: LoginDto = {
+        mail: userToAdd.username,
+        password: userToAdd.password
+      };
+      this.userService.login(userLogin).then(() => {
+        this.router.navigate(['dashboard']);
+      });
+    });
   }
 }

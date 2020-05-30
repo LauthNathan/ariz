@@ -22,12 +22,14 @@
         <li>
           <div class="mat-tree-node">
             <button mat-icon-button matTreeNodeToggle
-                    [attr.aria-label]="'toggle ' + node.name">
+                    [attr.aria-label]="'toggle ' + node.name" [id]="'toggleButton' + node.name">
               <mat-icon class="mat-icon-rtl-mirror">
                 {{treeControl.isExpanded(node) ? 'expand_more' : 'chevron_right'}}
               </mat-icon>
             </button>
-            {{node.name}}
+            <span (click)="triggerClick(node.name)" style="cursor: pointer">
+              {{node.name}}
+            </span>
           </div>
           <ul [class.step-tree-invisible]="!treeControl.isExpanded(node)">
             <ng-container matTreeNodeOutlet></ng-container>

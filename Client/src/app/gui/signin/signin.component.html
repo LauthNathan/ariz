@@ -42,7 +42,9 @@
         <a href="#">{{signinText.forgotPassword}}</a>
       </div>
 
-      <button mat-raised-button color="primary" [disabled]="formSignIn.invalid">{{signinText.submit}}</button>
+      <button mat-raised-button color="primary" [disabled]="formSignIn.invalid" (click)="login()">
+        {{signinText.submit}}
+      </button>
     </form>
 
 
@@ -101,7 +103,9 @@
           {{signinText.passwordConfirmationErrorRequired}}
         </mat-error>
       </mat-form-field>
-      <button mat-raised-button color="primary" [disabled]="signUpForm.invalid">{{signinText.submit}}</button>
+      <button mat-raised-button color="primary" [disabled]="signUpForm.invalid" (click)="createUser()">
+        {{signinText.submit}}
+      </button>
     </form>
   </div>
   <div class="illustration">

@@ -16,6 +16,7 @@ export interface ISigninLanguage {
   slogan: string;
   login: string;
   register: string;
+  loginError: string;
   forgotPassword: string;
 }
 
@@ -38,6 +39,7 @@ export class SigninLanguage {
     slogan: 'A POWERFULL TOOL ALLOWING YOU TO DEVELOP YOUR ARIZ PROJECTS',
     login: 'Log in',
     register: 'Sign up',
+    loginError: 'Wrong username or password',
     forgotPassword: 'Forgot password?'
   };
 
@@ -59,6 +61,7 @@ export class SigninLanguage {
     slogan: 'UN OUTIL PUISSANT VOUS PERMETTANT DE DÉVELOPPER VOS PROJETS ARIZ',
     login: 'Se connecter',
     register: 'S\'inscrire',
+    loginError: 'Mauvais Email ou mot de passe',
     forgotPassword: 'Mot de passe oublié ?'
   };
 }
