@@ -4,7 +4,8 @@
   "description": "Projet Recherche",
   "main": "index.js",
   "scripts": {
-    "dev": "ts-node-dev --respawn --transpileOnly src/index.ts"
+    "dev": "ts-node-dev --respawn --transpileOnly src/index.ts",
+    "start": "tsc && node dist/index.js"
   },
   "repository": {
     "type": "git",
