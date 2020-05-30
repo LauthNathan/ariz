@@ -33,6 +33,7 @@ import { CommentComponent } from './gui/project/steps/comment/comment.component'
 import { MoreInformationComponent } from './gui/project/steps/more-information/more-information.component';
 import {MatExpansionModule} from '@angular/material/expansion';
 import {MatSelectModule} from '@angular/material/select';
+import {MatRadioModule} from '@angular/material/radio';
 import {CommentLanguage} from './gui/project/steps/comment/comment.language';
 import {MoreInformationLanguage} from './gui/project/steps/more-information/more-information.language';
 import {StepsLanguage} from './gui/project/steps/steps.language';
@@ -44,6 +45,9 @@ import { ProjectProgressComponent } from './gui/project-progress/project-progres
 import { Step1Component } from './gui/project/steps/step1/step1.component';
 import { Step5Component } from './gui/project/steps/step5/step5.component';
 import { Step6Component } from './gui/project/steps/step6/step6.component';
+import { Step2Component } from './gui/project/steps/step2/step2.component';
+import { Step3Component } from './gui/project/steps/step3/step3.component';
+import { Step4Component } from './gui/project/steps/step4/step4.component';
 
 @NgModule({
   declarations: [
@@ -63,7 +67,10 @@ import { Step6Component } from './gui/project/steps/step6/step6.component';
     ProjectProgressComponent,
     Step1Component,
     Step5Component,
-    Step6Component
+    Step6Component,
+    Step2Component,
+    Step3Component,
+    Step4Component
   ],
   imports: [
     BrowserModule,
@@ -83,7 +90,8 @@ import { Step6Component } from './gui/project/steps/step6/step6.component';
     MatIconModule,
     MatExpansionModule,
     MatSelectModule,
-    MatChipsModule
+    MatChipsModule,
+    MatRadioModule
   ],
   providers: [
     {
