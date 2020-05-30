@@ -1,0 +1,83 @@
+<app-project-progress></app-project-progress>
+<div id="container">
+  <div class="content">
+    <h1>3. Représenter graphiquement les CT1 et CT2</h1>
+    <app-more-information [showMoreText]=""></app-more-information>
+
+    <div class="user">
+      <div>
+        <mat-radio-group class="group" aria-label="Select an option" [(ngModel)]="schema" (change)="setSchema()">
+          <mat-radio-button value="1">
+            <img src="../../../../../assets/schemas/effet_contradictoire.png" alt="Action contradictioire"/>
+          </mat-radio-button>
+          <mat-radio-button value="2">
+            <img src="../../../../../assets/schemas/effet_couple_type_1.png" alt="Effet couplé de type 1"/>
+          </mat-radio-button>
+          <mat-radio-button value="3">
+            <img src="../../../../../assets/schemas/effet_couple_type_2.png" alt="Effet couplé de type 2"/>
+          </mat-radio-button>
+          <mat-radio-button value="4">
+            <img src="../../../../../assets/schemas/effet_couple_type_3.png" alt="Effet couplé de type 3"/>
+          </mat-radio-button>
+          <mat-radio-button value="5">
+            <img src="../../../../../assets/schemas/effet_couple_type_4.png" alt="Effet couplé de type 4"/>
+          </mat-radio-button>
+          <mat-radio-button value="6">
+            <img src="../../../../../assets/schemas/effet_incompatible.png" alt="Effet incompatible"/>
+          </mat-radio-button>
+          <mat-radio-button value="7">
+            <img src="../../../../../assets/schemas/effet_incomplet.png" alt="Effet ou action incomplet"/>
+          </mat-radio-button>
+          <mat-radio-button value="8">
+            <img src="../../../../../assets/schemas/effet_incontrole.png" alt="Effet incontrôlé ou excessif"/>
+          </mat-radio-button>
+          <mat-radio-button value="9">
+            <img src="../../../../../assets/schemas/effet_inexistant.png" alt="Effet inexistant"/>
+          </mat-radio-button>
+        </mat-radio-group>
+      </div>
+    </div>
+
+    <div>
+      <p>Caractéristique de la CT1</p>
+      <div>
+        <mat-form-field class="w-100" appearance="fill">
+          <mat-label>CT1</mat-label>
+          <input matInput placeholder="Vitesse lente" [(ngModel)]="ct1" (focusout)="setCt1()">
+        </mat-form-field>
+      </div>
+    </div>
+
+    <div>
+      <p>Caractéristique de la CT2</p>
+      <div>
+        <mat-form-field class="w-100" appearance="fill">
+          <mat-label>CT2</mat-label>
+          <input matInput placeholder="Vitesse rapide" [(ngModel)]="ct2" (focusout)="setCt2()">
+        </mat-form-field>
+      </div>
+    </div>
+
+    <div>
+      <p>Attribut du premier lien</p>
+      <div>
+        <mat-form-field class="w-100" appearance="fill">
+          <mat-label>Lien 1</mat-label>
+          <input matInput placeholder="Impact" [(ngModel)]="firstLink" (focusout)="setLinks()">
+        </mat-form-field>
+      </div>
+    </div>
+
+    <div style="margin-bottom: 32px;">
+      <p>Attribut du second lien</p>
+      <div>
+        <mat-form-field class="w-100" appearance="fill">
+          <mat-label>Lien 2</mat-label>
+          <input matInput placeholder="Accélération" [(ngModel)]="secondLink" (focusout)="setLinks()">
+        </mat-form-field>
+      </div>
+    </div>
+
+    <app-comment class="comment" [commentValue]="comment" (comment)="setComment($event)"></app-comment>
+  </div>
+</div>

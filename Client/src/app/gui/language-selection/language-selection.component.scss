@@ -1,0 +1,11 @@
+#select {
+  position: relative;
+}
+
+#selected {
+  width: 32px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
