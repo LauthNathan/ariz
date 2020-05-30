@@ -9,7 +9,7 @@
       <div>
         <mat-form-field class="w-100" appearance="fill">
           <mat-label>Objet</mat-label>
-          <input matInput placeholder="Bille">
+          <input matInput placeholder="Bille" [(ngModel)]="object" (focusout)="setObject()">
         </mat-form-field>
       </div>
     </div>
@@ -19,7 +19,7 @@
       <div>
         <mat-form-field class="w-100" appearance="fill">
           <mat-label>Outil</mat-label>
-          <input matInput placeholder="Gaz">
+          <input matInput placeholder="Gaz" [(ngModel)]="tool" (focusout)="setTool()">
         </mat-form-field>
       </div>
     </div>

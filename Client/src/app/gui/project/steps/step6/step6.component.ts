@@ -21,7 +21,8 @@ export class Step6Component implements OnInit {
     const majorStep = NumberUtils.stringToNumbers(this.router.url.split('/')[3]);
     const minorStep = NumberUtils.stringToNumbers(this.router.url.split('/')[4]);
     // TODO: récupérer les éléments du localStorage
-    this.elements = ["Gaz", "Bille"];
+    this.elements.push(localStorage.getItem('objectStepTwo'));
+    this.elements.push(localStorage.getItem('toolStepTwo'));
     // TODO: récupérer le conflit intensifié de l'étape précédente du localStorage
     this.conflict = localStorage.getItem('intensifyConflictStepFive');
     this.comment = localStorage.getItem('commentStepSix');

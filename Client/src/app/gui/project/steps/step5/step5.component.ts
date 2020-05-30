@@ -14,6 +14,7 @@ export class Step5Component implements OnInit {
   links = [];
   ct = '';
   intensifyConflict = '';
+  selectedCt = '';
 
   constructor(private router: Router) {
   }
@@ -22,14 +23,18 @@ export class Step5Component implements OnInit {
     const majorStep = NumberUtils.stringToNumbers(this.router.url.split('/')[3]);
     const minorStep = NumberUtils.stringToNumbers(this.router.url.split('/')[4]);
     // TODO: récupérer les éléments du localStorage
-    this.elements = ["Gaz", "Bille"];
+    this.elements.push(localStorage.getItem('objectStepTwo'));
+    this.elements.push(localStorage.getItem('toolStepTwo'));
     // TODO: récupérer les liens du localStorage
-    this.links = JSON.parse(localStorage.getItem('linksStepFive'));
-    if (!this.links) {
-      this.links = ["Impact", "Accélération"];
-    }
+    this.links = JSON.parse(localStorage.getItem('linksStepThree'));
     // TODO: récupérer le texte du CT de l'étape précédente du localStorage
-    this.ct = localStorage.getItem('ctStepFive');
+    this.selectedCt = localStorage.getItem('selectedCtStepFour');
+    console.log(this.selectedCt);
+    if (this.selectedCt === '1') {
+      this.ct = localStorage.getItem('ctOneStepThree');
+    } else if (this.selectedCt === '2') {
+      this.ct = localStorage.getItem('ctTwoStepThree');
+    }
     this.comment = localStorage.getItem('commentStepFive');
     this.intensifyConflict = localStorage.getItem('intensifyConflictStepFive');
   }
@@ -56,7 +61,11 @@ export class Step5Component implements OnInit {
    * Set ct to the localstorage.
    */
   setCt(): void {
-    localStorage.setItem('ctStepFive', this.ct);
+    if (this.selectedCt === '1') {
+      localStorage.setItem('ctOneStepThree', this.ct);
+    } else if (this.selectedCt === '2') {
+      localStorage.setItem('ctTwoStepThree', this.ct);
+    }
   }
 
   /**
@@ -67,7 +76,7 @@ export class Step5Component implements OnInit {
    */
   setLinks(link: string, index: number): void {
     this.links[index] = link;
-    localStorage.setItem('linksStepFive', JSON.stringify(this.links));
+    localStorage.setItem('linksStepThree', JSON.stringify(this.links));
   }
 
   /**

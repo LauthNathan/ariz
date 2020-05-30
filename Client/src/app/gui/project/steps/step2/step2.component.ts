@@ -10,6 +10,8 @@ import {NumberUtils} from '../../../../utils/number.utils';
 export class Step2Component implements OnInit {
   comment = '';
   showMoreText = '';
+  object = '';
+  tool = '';
 
   constructor(private router: Router) {
   }
@@ -17,6 +19,9 @@ export class Step2Component implements OnInit {
   ngOnInit() {
     const majorStep = NumberUtils.stringToNumbers(this.router.url.split('/')[3]);
     const minorStep = NumberUtils.stringToNumbers(this.router.url.split('/')[4]);
+    this.object = localStorage.getItem('objectStepTwo');
+    this.tool = localStorage.getItem('toolStepTwo');
+    this.comment = localStorage.getItem('commentStepTwo');
   }
 
     /**
@@ -26,5 +31,20 @@ export class Step2Component implements OnInit {
    */
   setComment(comment: string) {
     this.comment = comment;
+    localStorage.setItem('commentStepTwo', comment);
+  }
+
+  /**
+   * Set object in the localstorage.
+   */
+  setObject(): void {
+    localStorage.setItem('objectStepTwo', this.object);
+  }
+
+  /**
+   * Set tool in the localstorage.
+   */
+  setTool(): void {
+    localStorage.setItem('toolStepTwo', this.tool);
   }
 }

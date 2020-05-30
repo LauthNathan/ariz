@@ -10,19 +10,20 @@ import {NumberUtils} from '../../../../utils/number.utils';
 export class Step4Component implements OnInit {
   comment = '';
   showMoreText = '';
-  links = [];
-  cts = [];
-
+  ct1 = '';
+  ct2 = '';
+  selectedCt = '';
   constructor(private router: Router) {
   }
 
   ngOnInit() {
     const majorStep = NumberUtils.stringToNumbers(this.router.url.split('/')[3]);
     const minorStep = NumberUtils.stringToNumbers(this.router.url.split('/')[4]);
-    // TODO: récupérer les liens du localStorage
-    this.links = ["Impact", "Accélération"];
     // TODO: récupérer les CT de l'étape précédente du localStorage
-    this.cts = ["Vitesse lente", "Vitesse rapide"];
+    this.ct1 = localStorage.getItem('ctOneStepThree');
+    this.ct2 = localStorage.getItem('ctTwoStepThree');
+    this.selectedCt = localStorage.getItem('selectedCtStepFour');
+    this.comment = localStorage.getItem('commentStepFour');
   }
 
   /**
@@ -40,5 +41,13 @@ export class Step4Component implements OnInit {
    */
   setComment(comment: string) {
     this.comment = comment;
+    localStorage.setItem('commentStepFour', comment);
+  }
+
+  /**
+   * Set the selected ct in the localstorage.
+   */
+  setSelectedCt(): void {
+    localStorage.setItem('selectedCtStepFour', this.selectedCt);
   }
 }

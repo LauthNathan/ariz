@@ -10,6 +10,11 @@ import {NumberUtils} from '../../../../utils/number.utils';
 export class Step3Component implements OnInit {
   comment = '';
   showMoreText = '';
+  schema = '';
+  ct1 = '';
+  ct2 = '';
+  firstLink = '';
+  secondLink = '';
 
   constructor(private router: Router) {
   }
@@ -17,6 +22,15 @@ export class Step3Component implements OnInit {
   ngOnInit() {
     const majorStep = NumberUtils.stringToNumbers(this.router.url.split('/')[3]);
     const minorStep = NumberUtils.stringToNumbers(this.router.url.split('/')[4]);
+    this.comment = localStorage.getItem('commentStepThree');
+    this.schema = localStorage.getItem('schemaStepThree');
+    this.ct1 = localStorage.getItem('ctOneStepThree');
+    this.ct2 = localStorage.getItem('ctTwoStepThree');
+    let links = JSON.parse(localStorage.getItem('linksStepThree'));
+    if (links) {
+      this.firstLink = links[0];
+      this.secondLink = links[1];
+    }
   }
 
     /**
@@ -26,5 +40,35 @@ export class Step3Component implements OnInit {
    */
   setComment(comment: string) {
     this.comment = comment;
+    localStorage.setItem('commentStepThree', comment);
+  }
+
+  /**
+   * Set the schema in the localstorage.
+   */
+  setSchema(): void {
+    localStorage.setItem('schemaStepThree', this.schema);
+  }
+
+  /**
+   * Set the ct1 in the localstorage.
+   */
+  setCt1(): void {
+    localStorage.setItem('ctOneStepThree', this.ct1);
+  }
+
+  /**
+   * Set the ct2 in the localstorage.
+   */
+  setCt2(): void {
+    localStorage.setItem('ctTwoStepThree', this.ct2);
+  }
+
+  /**
+   * Set the links in the localstorage.
+   */
+  setLinks(): void {
+    let links = [this.firstLink, this.secondLink];
+    localStorage.setItem('linksStepThree', JSON.stringify(links));
   }
 }
