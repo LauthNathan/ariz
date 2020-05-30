@@ -8,7 +8,7 @@
       <p>Énoncer la phrase de définition du système</p>
       <div>
         <mat-form-field class="textarea" appearance="fill">
-          <textarea matInput rows="5" placeholder="Le système (définir) dont la Fonction Principale (FPS) est (définir) comprend (énumérer les principales composantes du système)."></textarea>
+          <textarea matInput rows="5" placeholder="Le système (définir) dont la Fonction Principale (FPS) est (définir) comprend (énumérer les principales composantes du système)." [(ngModel)]="definition" (focusout)="setDefinition()"></textarea>
         </mat-form-field>
       </div>
     </div>
@@ -17,7 +17,7 @@
       <p>Définir la contradiction technique et son miroir (CT1 & CT2)</p>
       <div>
         <mat-form-field class="textarea" appearance="fill">
-          <textarea matInput rows="5" placeholder="La Contradiction Technique 1 (CT1) et son miroir : la Contradiction Technique 2 (CT2)."></textarea>
+          <textarea matInput rows="5" placeholder="La Contradiction Technique 1 (CT1) et son miroir : la Contradiction Technique 2 (CT2)." [(ngModel)]="contradiction" (focusout)="setContradiction()"></textarea>
         </mat-form-field>
       </div>
     </div>
@@ -25,7 +25,7 @@
       <p>Énoncer la phrase de reformulation du problème</p>
       <div>
         <mat-form-field class="textarea" appearance="fill">
-          <textarea matInput rows="5" placeholder="Il faut (définir le résultat à atteindre) avec un minimum de modifications dans le système."></textarea>
+          <textarea matInput rows="5" placeholder="Il faut (définir le résultat à atteindre) avec un minimum de modifications dans le système." [(ngModel)]="reformulation" (focusout)="setReformulation()"></textarea>
         </mat-form-field>
       </div>
     </div>

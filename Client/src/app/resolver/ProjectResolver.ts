@@ -13,10 +13,11 @@ export class ProjectResolver implements Resolve<any> {
 
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<any> | Promise<any> | any {
     return Promise.all([
-      this.projectService.getOneProjectAuthenticatedUser(route.params[this.id])
+      // this.projectService.getOneProjectAuthenticatedUser(route.params[this.id])
     ]).then(values => {
       return {
-        projectData: values[0]
+        // projectData: values[0]
+        projectData: {}
       };
     });
   }

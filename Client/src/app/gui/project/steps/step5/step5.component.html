@@ -15,7 +15,7 @@
       <p>Pousser la contrainte technique à l'extrême</p>
       <mat-form-field class="w-100" appearance="fill">
         <mat-label>Contrainte Technique</mat-label>
-        <input matInput value={{ct}}>
+        <input matInput [(ngModel)]="ct" (focusout)="setCt()">
       </mat-form-field>
     </div>
 
@@ -24,7 +24,7 @@
       <div *ngFor="let link of links; let index = index">
         <mat-form-field class="w-100" appearance="fill">
           <mat-label>{{"Lien " + (index+1)}}</mat-label>
-          <input matInput value={{link}}>
+          <input matInput [(ngModel)]="link" (focusout)="setLinks(link, index)">
         </mat-form-field>
       </div>
     </div>
@@ -33,7 +33,7 @@
       <p>Intensifier le conflit, après avoir définit l'état (action) extrême des éléments</p>
       <div>
         <mat-form-field class="textarea" appearance="fill">
-          <textarea matInput rows="5" placeholder="La vitesse du gaz est si rapide que l’accélération est multipliée par n, notre bille devient de la  poudre fine et n’impacte plus du tout"></textarea>
+          <textarea matInput rows="5" placeholder="La vitesse du gaz est si rapide que l’accélération est multipliée par n, notre bille devient de la  poudre fine et n’impacte plus du tout" [(ngModel)]="intensifyConflict" (focusout)="setIntensifyConflict()"></textarea>
         </mat-form-field>
       </div>
     </div>

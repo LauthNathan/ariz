@@ -8,6 +8,9 @@ import {NumberUtils} from '../../../../utils/number.utils';
   styleUrls: ['./step1.component.scss']
 })
 export class Step1Component implements OnInit {
+  definition = '';
+  contradiction = '';
+  reformulation = '';
   comment = '';
   showMoreText = '';
 
@@ -17,6 +20,10 @@ export class Step1Component implements OnInit {
   ngOnInit() {
     const majorStep = NumberUtils.stringToNumbers(this.router.url.split('/')[3]);
     const minorStep = NumberUtils.stringToNumbers(this.router.url.split('/')[4]);
+    this.definition = localStorage.getItem('definitionStepOne');
+    this.contradiction = localStorage.getItem('contradictionStepOne');
+    this.reformulation = localStorage.getItem('reformulationStepOne');
+    this.comment = localStorage.getItem('commentStepOne');
   }
 
     /**
@@ -24,7 +31,29 @@ export class Step1Component implements OnInit {
    *
    * @param comment - The comment from commentComponent.
    */
-  setComment(comment: string) {
+  setComment(comment: string): void {
     this.comment = comment;
+    localStorage.setItem('commentStepOne', comment);
+  }
+
+  /**
+   * Set the definition to the localstorage.
+   */
+  setDefinition(): void {
+    localStorage.setItem('definitionStepOne', this.definition);
+  }
+
+  /**
+   * Set the contradiction to the localstorage.
+   */
+  setContradiction(): void {
+    localStorage.setItem('contradictionStepOne', this.contradiction);
+  }
+
+  /**
+   * Set the reformulation to the localstorage.
+   */
+  setReformulation(): void {
+    localStorage.setItem('reformulationStepOne', this.reformulation);
   }
 }

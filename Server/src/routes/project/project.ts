@@ -87,7 +87,7 @@ router.post('/projects', auth, upload.single('image'), async (req, res) => {
  * Not working => Need delete cascade
  */
 router.delete('/projects/:id', auth, async (req, res) => {
-  const user = (req as any).user
+  const user = (req as any).user;
   try {
     const project = await prisma.project.delete({
       where: { id: req.params.id },

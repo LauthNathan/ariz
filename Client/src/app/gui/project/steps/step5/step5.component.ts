@@ -13,6 +13,7 @@ export class Step5Component implements OnInit {
   elements = [];
   links = [];
   ct = '';
+  intensifyConflict = '';
 
   constructor(private router: Router) {
   }
@@ -23,9 +24,14 @@ export class Step5Component implements OnInit {
     // TODO: récupérer les éléments du localStorage
     this.elements = ["Gaz", "Bille"];
     // TODO: récupérer les liens du localStorage
-    this.links = ["Impact", "Accélération"];
+    this.links = JSON.parse(localStorage.getItem('linksStepFive'));
+    if (!this.links) {
+      this.links = ["Impact", "Accélération"];
+    }
     // TODO: récupérer le texte du CT de l'étape précédente du localStorage
-    this.ct = "Vitesse rapide";
+    this.ct = localStorage.getItem('ctStepFive');
+    this.comment = localStorage.getItem('commentStepFive');
+    this.intensifyConflict = localStorage.getItem('intensifyConflictStepFive');
   }
 
   /**
@@ -41,7 +47,33 @@ export class Step5Component implements OnInit {
    *
    * @param comment - The comment from commentComponent.
    */
-  setComment(comment: string) {
+  setComment(comment: string): void {
     this.comment = comment;
+    localStorage.setItem('commentStepFive', comment);
+  }
+
+  /**
+   * Set ct to the localstorage.
+   */
+  setCt(): void {
+    localStorage.setItem('ctStepFive', this.ct);
+  }
+
+  /**
+   * Set the links to the localstorage.
+   *
+   * @param link - The link to update.
+   * @param index - The index in links array.
+   */
+  setLinks(link: string, index: number): void {
+    this.links[index] = link;
+    localStorage.setItem('linksStepFive', JSON.stringify(this.links));
+  }
+
+  /**
+   * Set intensifyConflict to the localstorage.
+   */
+  setIntensifyConflict(): void {
+    localStorage.setItem('intensifyConflictStepFive', this.intensifyConflict);
   }
 }
