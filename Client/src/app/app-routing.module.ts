@@ -8,6 +8,9 @@ import {BasicInputComponent} from './gui/project/steps/steps-type/basic-input/ba
 import {Step1Component} from './gui/project/steps/step1/step1.component';
 import {Step5Component} from './gui/project/steps/step5/step5.component';
 import {Step6Component} from './gui/project/steps/step6/step6.component';
+import { Step2Component } from './gui/project/steps/step2/step2.component';
+import { Step3Component } from './gui/project/steps/step3/step3.component';
+import { Step4Component } from './gui/project/steps/step4/step4.component';
 
 
 const routes: Routes = [
@@ -49,15 +52,15 @@ const routes: Routes = [
       },
       {
         path: 'one/two',
-        component: BasicInputComponent
+        component: Step2Component
       },
       {
         path: 'one/three',
-        component: BasicInputComponent
+        component: Step3Component
       },
       {
         path: 'one/four',
-        component: BasicInputComponent
+        component: Step4Component
       },
       {
         path: 'one/five',
