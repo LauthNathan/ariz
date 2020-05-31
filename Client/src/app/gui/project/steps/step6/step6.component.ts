@@ -13,13 +13,15 @@ export class Step6Component implements OnInit {
   elements = [];
   conflict = '';
   result = '';
+  majorStep: number;
+  minorStep: number;
 
   constructor(private router: Router) {
   }
 
   ngOnInit() {
-    const majorStep = NumberUtils.stringToNumbers(this.router.url.split('/')[3]);
-    const minorStep = NumberUtils.stringToNumbers(this.router.url.split('/')[4]);
+    this.majorStep = NumberUtils.stringToNumbers(this.router.url.split('/')[3]);
+    this.minorStep = NumberUtils.stringToNumbers(this.router.url.split('/')[4]);
     // TODO: récupérer les éléments du localStorage
     this.elements.push(localStorage.getItem('objectStepTwo'));
     this.elements.push(localStorage.getItem('toolStepTwo'));

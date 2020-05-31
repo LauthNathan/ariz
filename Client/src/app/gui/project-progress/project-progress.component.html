@@ -1,22 +1,22 @@
 <div class="progress">
-  <div class="step step-active step1">1</div>
-  <div class="step step2">2</div>
-  <div class="step step3">3</div>
-  <div class="step step4">4</div>
-  <div class="step step5">5</div>
-  <div class="step step6">6</div>
-  <div class="step step7">7</div>
-  <div class="step step8">8</div>
-  <div class="step step9">9</div>
+  <div class="step step1" [ngClass]="{'step-active': majorStep === 1}">1</div>
+  <div class="step step2" [ngClass]="{'step-active': majorStep === 2}">2</div>
+  <div class="step step3" [ngClass]="{'step-active': majorStep === 3}">3</div>
+  <div class="step step4" [ngClass]="{'step-active': majorStep === 4}">4</div>
+  <div class="step step5" [ngClass]="{'step-active': majorStep === 5}">5</div>
+  <div class="step step6" [ngClass]="{'step-active': majorStep === 6}">6</div>
+  <div class="step step7" [ngClass]="{'step-active': majorStep === 7}">7</div>
+  <div class="step step8" [ngClass]="{'step-active': majorStep === 8}">8</div>
+  <div class="step step9" [ngClass]="{'step-active': majorStep === 9}">9</div>
 </div>
 <div class="subprogress">
-  <div class="step step-active step1">1</div>
-  <div class="step step2">2</div>
-  <div class="step step3">3</div>
-  <div class="step step4">4</div>
-  <div class="step step5">5</div>
-  <div class="step step6">6</div>
-  <div class="step step7">7</div>
+  <div class="step step1" [ngClass]="{'step-active': minorStep === 1}" routerLink="../one">1</div>
+  <div class="step step2" [ngClass]="{'step-active': minorStep === 2}" routerLink="../two">2</div>
+  <div class="step step3" [ngClass]="{'step-active': minorStep === 3}" routerLink="../three">3</div>
+  <div class="step step4" [ngClass]="{'step-active': minorStep === 4}" routerLink="../four">4</div>
+  <div class="step step5" [ngClass]="{'step-active': minorStep === 5}" routerLink="../five">5</div>
+  <div class="step step6" [ngClass]="{'step-active': minorStep === 6}" routerLink="../six">6</div>
+  <div class="step step7" [ngClass]="{'step-active': minorStep === 7}">7</div>
 </div>
 
 <!-- Ajouter l'update quand on clique sur une step -->

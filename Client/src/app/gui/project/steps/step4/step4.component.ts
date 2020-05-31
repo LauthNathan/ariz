@@ -13,12 +13,15 @@ export class Step4Component implements OnInit {
   ct1 = '';
   ct2 = '';
   selectedCt = '';
+  majorStep: number;
+  minorStep: number;
+
   constructor(private router: Router) {
   }
 
   ngOnInit() {
-    const majorStep = NumberUtils.stringToNumbers(this.router.url.split('/')[3]);
-    const minorStep = NumberUtils.stringToNumbers(this.router.url.split('/')[4]);
+    this.majorStep = NumberUtils.stringToNumbers(this.router.url.split('/')[3]);
+    this.minorStep = NumberUtils.stringToNumbers(this.router.url.split('/')[4]);
     // TODO: récupérer les CT de l'étape précédente du localStorage
     this.ct1 = localStorage.getItem('ctOneStepThree');
     this.ct2 = localStorage.getItem('ctTwoStepThree');

@@ -15,13 +15,15 @@ export class Step3Component implements OnInit {
   ct2 = '';
   firstLink = '';
   secondLink = '';
+  majorStep: number;
+  minorStep: number;
 
   constructor(private router: Router) {
   }
 
   ngOnInit() {
-    const majorStep = NumberUtils.stringToNumbers(this.router.url.split('/')[3]);
-    const minorStep = NumberUtils.stringToNumbers(this.router.url.split('/')[4]);
+    this.majorStep = NumberUtils.stringToNumbers(this.router.url.split('/')[3]);
+    this.minorStep = NumberUtils.stringToNumbers(this.router.url.split('/')[4]);
     this.comment = localStorage.getItem('commentStepThree');
     this.schema = localStorage.getItem('schemaStepThree');
     this.ct1 = localStorage.getItem('ctOneStepThree');

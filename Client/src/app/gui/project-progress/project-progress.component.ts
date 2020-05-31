@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-project-progress',
@@ -6,6 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./project-progress.component.scss']
 })
 export class ProjectProgressComponent implements OnInit {
+
+  @Input() majorStep: number;
+  @Input() minorStep: number;
 
   constructor() { }
 

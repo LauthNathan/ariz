@@ -12,13 +12,15 @@ export class Step2Component implements OnInit {
   showMoreText = '';
   object = '';
   tool = '';
+  majorStep: number;
+  minorStep: number;
 
   constructor(private router: Router) {
   }
 
   ngOnInit() {
-    const majorStep = NumberUtils.stringToNumbers(this.router.url.split('/')[3]);
-    const minorStep = NumberUtils.stringToNumbers(this.router.url.split('/')[4]);
+    this.majorStep = NumberUtils.stringToNumbers(this.router.url.split('/')[3]);
+    this.minorStep = NumberUtils.stringToNumbers(this.router.url.split('/')[4]);
     this.object = localStorage.getItem('objectStepTwo');
     this.tool = localStorage.getItem('toolStepTwo');
     this.comment = localStorage.getItem('commentStepTwo');
