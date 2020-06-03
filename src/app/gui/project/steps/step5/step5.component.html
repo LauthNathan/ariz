@@ -1,39 +1,39 @@
 <app-project-progress></app-project-progress>
 <div id="container">
   <div class="content">
-    <h1>5. Intensifier le problème</h1>
+    <h1>5. Intensify the problem</h1>
     <app-more-information [showMoreText]=""></app-more-information>
 
     <div class="user">
       <p *ngFor="let el of elements; let index = index">
-        {{"Élément " + nbToAlphabet(index) + " : "}}
+        {{"Element " + nbToAlphabet(index) + " : "}}
         <span style="font-weight: bold;">{{el}}</span>
       </p>
     </div>
 
     <div>
-      <p>Pousser la contrainte technique à l'extrême</p>
+      <p>Push the technical constraint to the extreme</p>
       <mat-form-field class="w-100" appearance="fill">
-        <mat-label>Contrainte Technique</mat-label>
+        <mat-label>Technical Constraint</mat-label>
         <input matInput [(ngModel)]="ct" (focusout)="setCt()">
       </mat-form-field>
     </div>
 
     <div>
-      <p>Pousser ces liens à l'extrême</p>
+      <p>Pousser these links to the extreme</p>
       <div *ngFor="let link of links; let index = index">
         <mat-form-field class="w-100" appearance="fill">
-          <mat-label>{{"Lien " + (index+1)}}</mat-label>
+          <mat-label>{{"Link " + (index+1)}}</mat-label>
           <input matInput [(ngModel)]="link" (focusout)="setLinks(link, index)">
         </mat-form-field>
       </div>
     </div>
 
     <div class="user">
-      <p>Intensifier le conflit, après avoir définit l'état (action) extrême des éléments</p>
+      <p>Intensify the conflict, after defining the extreme state (action) of the elements</p>
       <div>
         <mat-form-field class="textarea" appearance="fill">
-          <textarea matInput rows="5" placeholder="La vitesse du gaz est si rapide que l’accélération est multipliée par n, notre bille devient de la  poudre fine et n’impacte plus du tout" [(ngModel)]="intensifyConflict" (focusout)="setIntensifyConflict()"></textarea>
+          <textarea matInput rows="5" placeholder="The speed of the gas is so fast that the acceleration is multiplied by n, our ball becomes fine powder and doesn't impact anymore" [(ngModel)]="intensifyConflict" (focusout)="setIntensifyConflict()"></textarea>
         </mat-form-field>
       </div>
     </div>

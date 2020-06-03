@@ -5,27 +5,27 @@
     <app-more-information [showMoreText]=""></app-more-information>
 
     <div class="user">
-      <p>Énoncer la phrase de définition du système</p>
+      <p>State the defining sentence of the system</p>
       <div>
         <mat-form-field class="textarea" appearance="fill">
-          <textarea matInput rows="5" placeholder="Le système (définir) dont la Fonction Principale (FPS) est (définir) comprend (énumérer les principales composantes du système)." [(ngModel)]="definition" (focusout)="setDefinition()"></textarea>
+          <textarea matInput rows="5" placeholder="The system (define) whose Main Function (FPS) is (define) includes (list the main components of the system)." [(ngModel)]="definition" (focusout)="setDefinition()"></textarea>
         </mat-form-field>
       </div>
     </div>
 
     <div class="user">
-      <p>Définir la contradiction technique et son miroir (CT1 & CT2)</p>
+      <p>Define the technical contradiction and its mirror (CT1 & CT2)</p>
       <div>
         <mat-form-field class="textarea" appearance="fill">
-          <textarea matInput rows="5" placeholder="La Contradiction Technique 1 (CT1) et son miroir : la Contradiction Technique 2 (CT2)." [(ngModel)]="contradiction" (focusout)="setContradiction()"></textarea>
+          <textarea matInput rows="5" placeholder="Technical Contradiction One (TC1) and its mirror, Technical Contradiction Two (TC2)." [(ngModel)]="contradiction" (focusout)="setContradiction()"></textarea>
         </mat-form-field>
       </div>
     </div>
     <div class="user">
-      <p>Énoncer la phrase de reformulation du problème</p>
+      <p>State the rewording sentence of the problem</p>
       <div>
         <mat-form-field class="textarea" appearance="fill">
-          <textarea matInput rows="5" placeholder="Il faut (définir le résultat à atteindre) avec un minimum de modifications dans le système." [(ngModel)]="reformulation" (focusout)="setReformulation()"></textarea>
+          <textarea matInput rows="5" placeholder="It is necessary to (define the result to be achieved) with a minimum of changes in the system." [(ngModel)]="reformulation" (focusout)="setReformulation()"></textarea>
         </mat-form-field>
       </div>
     </div>
