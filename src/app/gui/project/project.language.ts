@@ -13,7 +13,7 @@ export class ProjectLanguage {
   gb: IProjectLanguage = {
     steps: [
       {
-        name: 'Step 1 : Anaylyse the problem',
+        name: 'Step 1 : Analyse the problem',
         children: [
           {
             name: '1. Put in other words the problem and its caracteristics',
